@@ -1,0 +1,3739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="author" content="Maria Clara Moura de Freitas (20230093652) &lt;maria.clarafreitas@hotmail.com&gt;">
+<title>Lista de Exercícios - Processamento Digital de Imagens (2026.2)</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
+<style>
+/*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+/* Uncomment the following line when using as a custom stylesheet */
+/* @import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700"; */
+html{font-family:sans-serif;-webkit-text-size-adjust:100%}
+a{background:none}
+a:focus{outline:thin dotted}
+a:active,a:hover{outline:0}
+h1{font-size:2em;margin:.67em 0}
+b,strong{font-weight:bold}
+abbr{font-size:.9em}
+abbr[title]{cursor:help;border-bottom:1px dotted #dddddf;text-decoration:none}
+dfn{font-style:italic}
+hr{height:0}
+mark{background:#ff0;color:#000}
+code,kbd,pre,samp{font-family:monospace;font-size:1em}
+pre{white-space:pre-wrap}
+q{quotes:"\201C" "\201D" "\2018" "\2019"}
+small{font-size:80%}
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+sup{top:-.5em}
+sub{bottom:-.25em}
+img{border:0}
+svg:not(:root){overflow:hidden}
+figure{margin:0}
+audio,video{display:inline-block}
+audio:not([controls]){display:none;height:0}
+fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}
+legend{border:0;padding:0}
+button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}
+button,input{line-height:normal}
+button,select{text-transform:none}
+button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}
+button[disabled],html input[disabled]{cursor:default}
+input[type=checkbox],input[type=radio]{padding:0}
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
+textarea{overflow:auto;vertical-align:top}
+table{border-collapse:collapse;border-spacing:0}
+*,::before,::after{box-sizing:border-box}
+html,body{font-size:100%}
+body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;line-height:1;position:relative;cursor:auto;-moz-tab-size:4;-o-tab-size:4;tab-size:4;word-wrap:anywhere;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
+a:hover{cursor:pointer}
+img,object,embed{max-width:100%;height:auto}
+object,embed{height:100%}
+img{-ms-interpolation-mode:bicubic}
+.left{float:left!important}
+.right{float:right!important}
+.text-left{text-align:left!important}
+.text-right{text-align:right!important}
+.text-center{text-align:center!important}
+.text-justify{text-align:justify!important}
+.hide{display:none}
+img,object,svg{display:inline-block;vertical-align:middle}
+textarea{height:auto;min-height:50px}
+select{width:100%}
+.subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6,pre,form,p,blockquote,th,td{margin:0;padding:0}
+a{color:#2156a5;text-decoration:underline;line-height:inherit}
+a:hover,a:focus{color:#1d4b8f}
+a img{border:0}
+p{line-height:1.6;margin-bottom:1.25em;text-rendering:optimizeLegibility}
+p aside{font-size:.875em;line-height:1.35;font-style:italic}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{font-family:"Open Sans","DejaVu Sans",sans-serif;font-weight:300;font-style:normal;color:#ba3925;text-rendering:optimizeLegibility;margin-top:1em;margin-bottom:.5em;line-height:1.0125em}
+h1 small,h2 small,h3 small,#toctitle small,.sidebarblock>.content>.title small,h4 small,h5 small,h6 small{font-size:60%;color:#e99b8f;line-height:0}
+h1{font-size:2.125em}
+h2{font-size:1.6875em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.375em}
+h4,h5{font-size:1.125em}
+h6{font-size:1em}
+hr{border:solid #dddddf;border-width:1px 0 0;clear:both;margin:1.25em 0 1.1875em}
+em,i{font-style:italic;line-height:inherit}
+strong,b{font-weight:bold;line-height:inherit}
+small{font-size:60%;line-height:inherit}
+code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;color:rgba(0,0,0,.9)}
+ul,ol,dl{line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
+ul,ol{margin-left:1.5em}
+ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0}
+ul.circle{list-style-type:circle}
+ul.disc{list-style-type:disc}
+ul.square{list-style-type:square}
+ul.circle ul:not([class]),ul.disc ul:not([class]),ul.square ul:not([class]){list-style:inherit}
+ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
+dl dt{margin-bottom:.3125em;font-weight:bold}
+dl dd{margin-bottom:1.25em}
+blockquote{margin:0 0 1.25em;padding:.5625em 1.25em 0 1.1875em;border-left:1px solid #ddd}
+blockquote,blockquote p{line-height:1.6;color:rgba(0,0,0,.85)}
+@media screen and (min-width:768px){h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2}
+h1{font-size:2.75em}
+h2{font-size:2.3125em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.6875em}
+h4{font-size:1.4375em}}
+table{background:#fff;margin-bottom:1.25em;border:1px solid #dedede;word-wrap:normal}
+table thead,table tfoot{background:#f7f8f7}
+table thead tr th,table thead tr td,table tfoot tr th,table tfoot tr td{padding:.5em .625em .625em;font-size:inherit;color:rgba(0,0,0,.8);text-align:left}
+table tr th,table tr td{padding:.5625em .625em;font-size:inherit;color:rgba(0,0,0,.8)}
+table tr.even,table tr.alt{background:#f8f8f7}
+table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{line-height:1.6}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2;word-spacing:-.05em}
+h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title strong,h4 strong,h5 strong,h6 strong{font-weight:400}
+.center{margin-left:auto;margin-right:auto}
+.stretch{width:100%}
+.clearfix::before,.clearfix::after,.float-group::before,.float-group::after{content:" ";display:table}
+.clearfix::after,.float-group::after{clear:both}
+:not(pre).nobreak{word-wrap:normal}
+:not(pre).nowrap{white-space:nowrap}
+:not(pre).pre-wrap{white-space:pre-wrap}
+:not(pre):not([class^=L])>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background:#f7f7f8;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed}
+pre{color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;line-height:1.45;text-rendering:optimizeSpeed}
+pre code,pre pre{color:inherit;font-size:inherit;line-height:inherit}
+pre>code{display:block}
+pre.nowrap,pre.nowrap pre{white-space:pre;word-wrap:normal}
+em em{font-style:normal}
+strong strong{font-weight:400}
+.keyseq{color:rgba(51,51,51,.8)}
+kbd{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;display:inline-block;color:rgba(0,0,0,.8);font-size:.65em;line-height:1.45;background:#f7f7f7;border:1px solid #ccc;border-radius:3px;box-shadow:0 1px 0 rgba(0,0,0,.2),inset 0 0 0 .1em #fff;margin:0 .15em;padding:.2em .5em;vertical-align:middle;position:relative;top:-.1em;white-space:nowrap}
+.keyseq kbd:first-child{margin-left:0}
+.keyseq kbd:last-child{margin-right:0}
+.menuseq,.menuref{color:#000}
+.menuseq b:not(.caret),.menuref{font-weight:inherit}
+.menuseq{word-spacing:-.02em}
+.menuseq b.caret{font-size:1.25em;line-height:.8}
+.menuseq i.caret{font-weight:bold;text-align:center;width:.45em}
+b.button::before,b.button::after{position:relative;top:-1px;font-weight:400}
+b.button::before{content:"[";padding:0 3px 0 2px}
+b.button::after{content:"]";padding:0 2px 0 3px}
+p a>code:hover{color:rgba(0,0,0,.9)}
+#header,#content,#footnotes,#footer{width:100%;margin:0 auto;max-width:62.5em;*zoom:1;position:relative;padding-left:.9375em;padding-right:.9375em}
+#header::before,#header::after,#content::before,#content::after,#footnotes::before,#footnotes::after,#footer::before,#footer::after{content:" ";display:table}
+#header::after,#content::after,#footnotes::after,#footer::after{clear:both}
+#content{margin-top:1.25em}
+#content::before{content:none}
+#header>h1:first-child{color:rgba(0,0,0,.85);margin-top:2.25rem;margin-bottom:0}
+#header>h1:first-child+#toc{margin-top:8px;border-top:1px solid #dddddf}
+#header>h1:only-child{border-bottom:1px solid #dddddf;padding-bottom:8px}
+#header .details{border-bottom:1px solid #dddddf;line-height:1.45;padding-top:.25em;padding-bottom:.25em;padding-left:.25em;color:rgba(0,0,0,.6);display:flex;flex-flow:row wrap}
+#header .details span:first-child{margin-left:-.125em}
+#header .details span.email a{color:rgba(0,0,0,.85)}
+#header .details br{display:none}
+#header .details br+span::before{content:"\00a0\2013\00a0"}
+#header .details br+span.author::before{content:"\00a0\22c5\00a0";color:rgba(0,0,0,.85)}
+#header .details br+span#revremark::before{content:"\00a0|\00a0"}
+#header #revnumber{text-transform:capitalize}
+#header #revnumber::after{content:"\00a0"}
+#content>h1:first-child:not([class]){color:rgba(0,0,0,.85);border-bottom:1px solid #dddddf;padding-bottom:8px;margin-top:0;padding-top:1rem;margin-bottom:1.25rem}
+#toc{border-bottom:1px solid #e7e7e9;padding-bottom:.5em}
+#toc>ul{margin-left:.125em}
+#toc ul.sectlevel0>li>a{font-style:italic}
+#toc ul.sectlevel0 ul.sectlevel1{margin:.5em 0}
+#toc ul{font-family:"Open Sans","DejaVu Sans",sans-serif;list-style-type:none}
+#toc li{line-height:1.3334;margin-top:.3334em}
+#toc a{text-decoration:none}
+#toc a:active{text-decoration:underline}
+#toctitle{color:#7a2518;font-size:1.2em}
+@media screen and (min-width:768px){#toctitle{font-size:1.375em}
+body.toc2{padding-left:15em;padding-right:0}
+body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #dddddf;padding-bottom:8px}
+#toc.toc2{margin-top:0!important;background:#f8f8f7;position:fixed;width:15em;left:0;top:0;border-right:1px solid #e7e7e9;border-top-width:0!important;border-bottom-width:0!important;z-index:1000;padding:1.25em 1em;height:100%;overflow:auto}
+#toc.toc2 #toctitle{margin-top:0;margin-bottom:.8rem;font-size:1.2em}
+#toc.toc2>ul{font-size:.9em;margin-bottom:0}
+#toc.toc2 ul ul{margin-left:0;padding-left:1em}
+#toc.toc2 ul.sectlevel0 ul.sectlevel1{padding-left:0;margin-top:.5em;margin-bottom:.5em}
+body.toc2.toc-right{padding-left:0;padding-right:15em}
+body.toc2.toc-right #toc.toc2{border-right-width:0;border-left:1px solid #e7e7e9;left:auto;right:0}}
+@media screen and (min-width:1280px){body.toc2{padding-left:20em;padding-right:0}
+#toc.toc2{width:20em}
+#toc.toc2 #toctitle{font-size:1.375em}
+#toc.toc2>ul{font-size:.95em}
+#toc.toc2 ul ul{padding-left:1.25em}
+body.toc2.toc-right{padding-left:0;padding-right:20em}}
+#content #toc{border:1px solid #e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;border-radius:4px}
+#content #toc>:first-child{margin-top:0}
+#content #toc>:last-child{margin-bottom:0}
+#footer{max-width:none;background:rgba(0,0,0,.8);padding:1.25em}
+#footer-text{color:hsla(0,0%,100%,.8);line-height:1.44}
+#content{margin-bottom:.625em}
+.sect1{padding-bottom:.625em}
+@media screen and (min-width:768px){#content{margin-bottom:1.25em}
+.sect1{padding-bottom:1.25em}}
+.sect1:last-child{padding-bottom:0}
+.sect1+.sect1{border-top:1px solid #e7e7e9}
+#content h1>a.anchor,h2>a.anchor,h3>a.anchor,#toctitle>a.anchor,.sidebarblock>.content>.title>a.anchor,h4>a.anchor,h5>a.anchor,h6>a.anchor{position:absolute;z-index:1001;width:1.5ex;margin-left:-1.5ex;display:block;text-decoration:none!important;visibility:hidden;text-align:center;font-weight:400}
+#content h1>a.anchor::before,h2>a.anchor::before,h3>a.anchor::before,#toctitle>a.anchor::before,.sidebarblock>.content>.title>a.anchor::before,h4>a.anchor::before,h5>a.anchor::before,h6>a.anchor::before{content:"\00A7";font-size:.85em;display:block;padding-top:.1em}
+#content h1:hover>a.anchor,#content h1>a.anchor:hover,h2:hover>a.anchor,h2>a.anchor:hover,h3:hover>a.anchor,#toctitle:hover>a.anchor,.sidebarblock>.content>.title:hover>a.anchor,h3>a.anchor:hover,#toctitle>a.anchor:hover,.sidebarblock>.content>.title>a.anchor:hover,h4:hover>a.anchor,h4>a.anchor:hover,h5:hover>a.anchor,h5>a.anchor:hover,h6:hover>a.anchor,h6>a.anchor:hover{visibility:visible}
+#content h1>a.link,h2>a.link,h3>a.link,#toctitle>a.link,.sidebarblock>.content>.title>a.link,h4>a.link,h5>a.link,h6>a.link{color:#ba3925;text-decoration:none}
+#content h1>a.link:hover,h2>a.link:hover,h3>a.link:hover,#toctitle>a.link:hover,.sidebarblock>.content>.title>a.link:hover,h4>a.link:hover,h5>a.link:hover,h6>a.link:hover{color:#a53221}
+details,.audioblock,.imageblock,.literalblock,.listingblock,.stemblock,.videoblock{margin-bottom:1.25em}
+details{margin-left:1.25rem}
+details>summary{cursor:pointer;display:block;position:relative;line-height:1.6;margin-bottom:.625rem;outline:none;-webkit-tap-highlight-color:transparent}
+details>summary::-webkit-details-marker{display:none}
+details>summary::before{content:"";border:solid transparent;border-left:solid;border-width:.3em 0 .3em .5em;position:absolute;top:.5em;left:-1.25rem;transform:translateX(15%)}
+details[open]>summary::before{border:solid transparent;border-top:solid;border-width:.5em .3em 0;transform:translateY(15%)}
+details>summary::after{content:"";width:1.25rem;height:1em;position:absolute;top:.3em;left:-1.25rem}
+.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{text-rendering:optimizeLegibility;text-align:left;font-family:"Noto Serif","DejaVu Serif",serif;font-size:1rem;font-style:italic}
+table.tableblock.fit-content>caption.title{white-space:nowrap;width:0}
+.paragraph.lead>p,#preamble>.sectionbody>[class=paragraph]:first-of-type p{font-size:1.21875em;line-height:1.6;color:rgba(0,0,0,.85)}
+.admonitionblock>table{border-collapse:separate;border:0;background:none;width:100%}
+.admonitionblock>table td.icon{text-align:center;width:80px}
+.admonitionblock>table td.icon img{max-width:none}
+.admonitionblock>table td.icon .title{font-weight:bold;font-family:"Open Sans","DejaVu Sans",sans-serif;text-transform:uppercase}
+.admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #dddddf;color:rgba(0,0,0,.6);word-wrap:anywhere}
+.admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}
+.exampleblock>.content{border:1px solid #e6e6e6;margin-bottom:1.25em;padding:1.25em;background:#fff;border-radius:4px}
+.sidebarblock{border:1px solid #dbdbd6;margin-bottom:1.25em;padding:1.25em;background:#f3f3f2;border-radius:4px}
+.sidebarblock>.content>.title{color:#7a2518;margin-top:0;text-align:center}
+.exampleblock>.content>:first-child,.sidebarblock>.content>:first-child{margin-top:0}
+.exampleblock>.content>:last-child,.exampleblock>.content>:last-child>:last-child,.exampleblock>.content .olist>ol>li:last-child>:last-child,.exampleblock>.content .ulist>ul>li:last-child>:last-child,.exampleblock>.content .qlist>ol>li:last-child>:last-child,.sidebarblock>.content>:last-child,.sidebarblock>.content>:last-child>:last-child,.sidebarblock>.content .olist>ol>li:last-child>:last-child,.sidebarblock>.content .ulist>ul>li:last-child>:last-child,.sidebarblock>.content .qlist>ol>li:last-child>:last-child{margin-bottom:0}
+.literalblock pre,.listingblock>.content>pre{border-radius:4px;overflow-x:auto;padding:1em;font-size:.8125em}
+@media screen and (min-width:768px){.literalblock pre,.listingblock>.content>pre{font-size:.90625em}}
+@media screen and (min-width:1280px){.literalblock pre,.listingblock>.content>pre{font-size:1em}}
+.literalblock pre,.listingblock>.content>pre:not(.highlight),.listingblock>.content>pre[class=highlight],.listingblock>.content>pre[class^="highlight "]{background:#f7f7f8}
+.literalblock.output pre{color:#f7f7f8;background:rgba(0,0,0,.9)}
+.listingblock>.content{position:relative}
+.listingblock code[data-lang]::before{display:none;content:attr(data-lang);position:absolute;font-size:.75em;top:.425rem;right:.5rem;line-height:1;text-transform:uppercase;color:inherit;opacity:.5}
+.listingblock:hover code[data-lang]::before{display:block}
+.listingblock.terminal pre .command::before{content:attr(data-prompt);padding-right:.5em;color:inherit;opacity:.5}
+.listingblock.terminal pre .command:not([data-prompt])::before{content:"$"}
+.listingblock pre.highlightjs{padding:0}
+.listingblock pre.highlightjs>code{padding:1em;border-radius:4px}
+.listingblock pre.prettyprint{border-width:0}
+.prettyprint{background:#f7f7f8}
+pre.prettyprint .linenums{line-height:1.45;margin-left:2em}
+pre.prettyprint li{background:none;list-style-type:inherit;padding-left:0}
+pre.prettyprint li code[data-lang]::before{opacity:1}
+pre.prettyprint li:not(:first-child) code[data-lang]::before{display:none}
+table.linenotable{border-collapse:separate;border:0;margin-bottom:0;background:none}
+table.linenotable td[class]{color:inherit;vertical-align:top;padding:0;line-height:inherit;white-space:normal}
+table.linenotable td.code{padding-left:.75em}
+table.linenotable td.linenos,pre.pygments .linenos{border-right:1px solid;opacity:.35;padding-right:.5em;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+pre.pygments span.linenos{display:inline-block;margin-right:.75em}
+.quoteblock{margin:0 1em 1.25em 1.5em;display:table}
+.quoteblock:not(.excerpt)>.title{margin-left:-1.5em;margin-bottom:.75em}
+.quoteblock blockquote,.quoteblock p{color:rgba(0,0,0,.85);font-size:1.15rem;line-height:1.75;word-spacing:.1em;letter-spacing:0;font-style:italic;text-align:justify}
+.quoteblock blockquote{margin:0;padding:0;border:0}
+.quoteblock blockquote::before{content:"\201c";float:left;font-size:2.75em;font-weight:bold;line-height:.6em;margin-left:-.6em;color:#7a2518;text-shadow:0 1px 2px rgba(0,0,0,.1)}
+.quoteblock blockquote>.paragraph:last-child p{margin-bottom:0}
+.quoteblock .attribution{margin-top:.75em;margin-right:.5ex;text-align:right}
+.verseblock{margin:0 1em 1.25em}
+.verseblock pre{font-family:"Open Sans","DejaVu Sans",sans-serif;font-size:1.15rem;color:rgba(0,0,0,.85);font-weight:300;text-rendering:optimizeLegibility}
+.verseblock pre strong{font-weight:400}
+.verseblock .attribution{margin-top:1.25rem;margin-left:.5ex}
+.quoteblock .attribution,.verseblock .attribution{font-size:.9375em;line-height:1.45;font-style:italic}
+.quoteblock .attribution br,.verseblock .attribution br{display:none}
+.quoteblock .attribution cite,.verseblock .attribution cite{display:block;letter-spacing:-.025em;color:rgba(0,0,0,.6)}
+.quoteblock.abstract blockquote::before,.quoteblock.excerpt blockquote::before,.quoteblock .quoteblock blockquote::before{display:none}
+.quoteblock.abstract blockquote,.quoteblock.abstract p,.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{line-height:1.6;word-spacing:0}
+.quoteblock.abstract{margin:0 1em 1.25em;display:block}
+.quoteblock.abstract>.title{margin:0 0 .375em;font-size:1.15em;text-align:center}
+.quoteblock.excerpt>blockquote,.quoteblock .quoteblock{padding:0 0 .25em 1em;border-left:.25em solid #dddddf}
+.quoteblock.excerpt,.quoteblock .quoteblock{margin-left:0}
+.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{color:inherit;font-size:1.0625rem}
+.quoteblock.excerpt .attribution,.quoteblock .quoteblock .attribution{color:inherit;font-size:.85rem;text-align:left;margin-right:0}
+p.tableblock:last-child{margin-bottom:0}
+td.tableblock>.content{margin-bottom:1.25em;word-wrap:anywhere}
+td.tableblock>.content>:last-child{margin-bottom:-1.25em}
+table.tableblock,th.tableblock,td.tableblock{border:0 solid #dedede}
+table.grid-all>*>tr>*{border-width:1px}
+table.grid-cols>*>tr>*{border-width:0 1px}
+table.grid-rows>*>tr>*{border-width:1px 0}
+table.frame-all{border-width:1px}
+table.frame-ends{border-width:1px 0}
+table.frame-sides{border-width:0 1px}
+table.frame-none>colgroup+*>:first-child>*,table.frame-sides>colgroup+*>:first-child>*{border-top-width:0}
+table.frame-none>:last-child>:last-child>*,table.frame-sides>:last-child>:last-child>*{border-bottom-width:0}
+table.frame-none>*>tr>:first-child,table.frame-ends>*>tr>:first-child{border-left-width:0}
+table.frame-none>*>tr>:last-child,table.frame-ends>*>tr>:last-child{border-right-width:0}
+table.stripes-all>*>tr,table.stripes-odd>*>tr:nth-of-type(odd),table.stripes-even>*>tr:nth-of-type(even),table.stripes-hover>*>tr:hover{background:#f8f8f7}
+th.halign-left,td.halign-left{text-align:left}
+th.halign-right,td.halign-right{text-align:right}
+th.halign-center,td.halign-center{text-align:center}
+th.valign-top,td.valign-top{vertical-align:top}
+th.valign-bottom,td.valign-bottom{vertical-align:bottom}
+th.valign-middle,td.valign-middle{vertical-align:middle}
+table thead th,table tfoot th{font-weight:bold}
+tbody tr th{background:#f7f8f7}
+tbody tr th,tbody tr th p,tfoot tr th,tfoot tr th p{color:rgba(0,0,0,.8);font-weight:bold}
+p.tableblock>code:only-child{background:none;padding:0}
+p.tableblock{font-size:1em}
+ol{margin-left:1.75em}
+ul li ol{margin-left:1.5em}
+dl dd{margin-left:1.125em}
+dl dd:last-child,dl dd:last-child>:last-child{margin-bottom:0}
+li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
+ul.checklist,ul.none,ol.none,ul.no-bullet,ol.no-bullet,ol.unnumbered,ul.unstyled,ol.unstyled{list-style-type:none}
+ul.no-bullet,ol.no-bullet,ol.unnumbered{margin-left:.625em}
+ul.unstyled,ol.unstyled{margin-left:0}
+li>p:empty:only-child::before{content:"";display:inline-block}
+ul.checklist>li>p:first-child{margin-left:-1em}
+ul.checklist>li>p:first-child>.fa-square-o:first-child,ul.checklist>li>p:first-child>.fa-check-square-o:first-child{width:1.25em;font-size:.8em;position:relative;bottom:.125em}
+ul.checklist>li>p:first-child>input[type=checkbox]:first-child{margin-right:.25em}
+ul.inline{display:flex;flex-flow:row wrap;list-style:none;margin:0 0 .625em -1.25em}
+ul.inline>li{margin-left:1.25em}
+.unstyled dl dt{font-weight:400;font-style:normal}
+ol.arabic{list-style-type:decimal}
+ol.decimal{list-style-type:decimal-leading-zero}
+ol.loweralpha{list-style-type:lower-alpha}
+ol.upperalpha{list-style-type:upper-alpha}
+ol.lowerroman{list-style-type:lower-roman}
+ol.upperroman{list-style-type:upper-roman}
+ol.lowergreek{list-style-type:lower-greek}
+.hdlist>table,.colist>table{border:0;background:none}
+.hdlist>table>tbody>tr,.colist>table>tbody>tr{background:none}
+td.hdlist1,td.hdlist2{vertical-align:top;padding:0 .625em}
+td.hdlist1{font-weight:bold;padding-bottom:1.25em}
+td.hdlist2{word-wrap:anywhere}
+.literalblock+.colist,.listingblock+.colist{margin-top:-.5em}
+.colist td:not([class]):first-child{padding:.4em .75em 0;line-height:1;vertical-align:top}
+.colist td:not([class]):first-child img{max-width:none}
+.colist td:not([class]):last-child{padding:.25em 0}
+.thumb,.th{line-height:0;display:inline-block;border:4px solid #fff;box-shadow:0 0 0 1px #ddd}
+.imageblock.left{margin:.25em .625em 1.25em 0}
+.imageblock.right{margin:.25em 0 1.25em .625em}
+.imageblock>.title{margin-bottom:0}
+.imageblock.thumb,.imageblock.th{border-width:6px}
+.imageblock.thumb>.title,.imageblock.th>.title{padding:0 .125em}
+.image.left,.image.right{margin-top:.25em;margin-bottom:.25em;display:inline-block;line-height:0}
+.image.left{margin-right:.625em}
+.image.right{margin-left:.625em}
+a.image{text-decoration:none;display:inline-block}
+a.image object{pointer-events:none}
+sup.footnote,sup.footnoteref{font-size:.875em;position:static;vertical-align:super}
+sup.footnote a,sup.footnoteref a{text-decoration:none}
+sup.footnote a:active,sup.footnoteref a:active,#footnotes .footnote a:first-of-type:active{text-decoration:underline}
+#footnotes{padding-top:.75em;padding-bottom:.75em;margin-bottom:.625em}
+#footnotes hr{width:20%;min-width:6.25em;margin:-.25em 0 .75em;border-width:1px 0 0}
+#footnotes .footnote{padding:0 .375em 0 .225em;line-height:1.3334;font-size:.875em;margin-left:1.2em;margin-bottom:.2em}
+#footnotes .footnote a:first-of-type{font-weight:bold;text-decoration:none;margin-left:-1.05em}
+#footnotes .footnote:last-of-type{margin-bottom:0}
+#content #footnotes{margin-top:-.625em;margin-bottom:0;padding:.75em 0}
+div.unbreakable{page-break-inside:avoid}
+.big{font-size:larger}
+.small{font-size:smaller}
+.underline{text-decoration:underline}
+.overline{text-decoration:overline}
+.line-through{text-decoration:line-through}
+.aqua{color:#00bfbf}
+.aqua-background{background:#00fafa}
+.black{color:#000}
+.black-background{background:#000}
+.blue{color:#0000bf}
+.blue-background{background:#0000fa}
+.fuchsia{color:#bf00bf}
+.fuchsia-background{background:#fa00fa}
+.gray{color:#606060}
+.gray-background{background:#7d7d7d}
+.green{color:#006000}
+.green-background{background:#007d00}
+.lime{color:#00bf00}
+.lime-background{background:#00fa00}
+.maroon{color:#600000}
+.maroon-background{background:#7d0000}
+.navy{color:#000060}
+.navy-background{background:#00007d}
+.olive{color:#606000}
+.olive-background{background:#7d7d00}
+.purple{color:#600060}
+.purple-background{background:#7d007d}
+.red{color:#bf0000}
+.red-background{background:#fa0000}
+.silver{color:#909090}
+.silver-background{background:#bcbcbc}
+.teal{color:#006060}
+.teal-background{background:#007d7d}
+.white{color:#bfbfbf}
+.white-background{background:#fafafa}
+.yellow{color:#bfbf00}
+.yellow-background{background:#fafa00}
+span.icon>.fa{cursor:default}
+a span.icon>.fa{cursor:inherit}
+.admonitionblock td.icon [class^="fa icon-"]{font-size:2.5em;text-shadow:1px 1px 2px rgba(0,0,0,.5);cursor:default}
+.admonitionblock td.icon .icon-note::before{content:"\f05a";color:#19407c}
+.admonitionblock td.icon .icon-tip::before{content:"\f0eb";text-shadow:1px 1px 2px rgba(155,155,0,.8);color:#111}
+.admonitionblock td.icon .icon-warning::before{content:"\f071";color:#bf6900}
+.admonitionblock td.icon .icon-caution::before{content:"\f06d";color:#bf3400}
+.admonitionblock td.icon .icon-important::before{content:"\f06a";color:#bf0000}
+.conum[data-value]{display:inline-block;color:#fff!important;background:rgba(0,0,0,.8);border-radius:50%;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
+.conum[data-value] *{color:#fff!important}
+.conum[data-value]+b{display:none}
+.conum[data-value]::after{content:attr(data-value)}
+pre .conum[data-value]{position:relative;top:-.125em}
+b.conum *{color:inherit!important}
+.conum:not([data-value]):empty{display:none}
+dt,th.tableblock,td.content,div.footnote{text-rendering:optimizeLegibility}
+h1,h2,p,td.content,span.alt,summary{letter-spacing:-.01em}
+p strong,td.content strong,div.footnote strong{letter-spacing:-.005em}
+p,blockquote,dt,td.content,td.hdlist1,span.alt,summary{font-size:1.0625rem}
+p{margin-bottom:1.25rem}
+.sidebarblock p,.sidebarblock dt,.sidebarblock td.content,p.tableblock{font-size:1em}
+.exampleblock>.content{background:#fffef7;border-color:#e0e0dc;box-shadow:0 1px 4px #e0e0dc}
+.print-only{display:none!important}
+@page{margin:1.25cm .75cm}
+@media print{*{box-shadow:none!important;text-shadow:none!important}
+html{font-size:80%}
+a{color:inherit!important;text-decoration:underline!important}
+a.bare,a[href^="#"],a[href^="mailto:"]{text-decoration:none!important}
+a[href^="http:"]:not(.bare)::after,a[href^="https:"]:not(.bare)::after{content:"(" attr(href) ")";display:inline-block;font-size:.875em;padding-left:.25em}
+abbr[title]{border-bottom:1px dotted}
+abbr[title]::after{content:" (" attr(title) ")"}
+pre,blockquote,tr,img,object,svg{page-break-inside:avoid}
+thead{display:table-header-group}
+svg{max-width:100%}
+p,blockquote,dt,td.content{font-size:1em;orphans:3;widows:3}
+h2,h3,#toctitle,.sidebarblock>.content>.title{page-break-after:avoid}
+#header,#content,#footnotes,#footer{max-width:none}
+#toc,.sidebarblock,.exampleblock>.content{background:none!important}
+#toc{border-bottom:1px solid #dddddf!important;padding-bottom:0!important}
+body.book #header{text-align:center}
+body.book #header>h1:first-child{border:0!important;margin:2.5em 0 1em}
+body.book #header .details{border:0!important;display:block;padding:0!important}
+body.book #header .details span:first-child{margin-left:0!important}
+body.book #header .details br{display:block}
+body.book #header .details br+span::before{content:none!important}
+body.book #toc{border:0!important;text-align:left!important;padding:0!important;margin:0!important}
+body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-break-before:always}
+.listingblock code[data-lang]::before{display:block}
+#footer{padding:0 .9375em}
+.hide-on-print{display:none!important}
+.print-only{display:block!important}
+.hide-for-print{display:none!important}
+.show-for-print{display:inherit!important}}
+@media amzn-kf8,print{#header>h1:first-child{margin-top:1.25rem}
+.sect1{padding:0!important}
+.sect1+.sect1{border:0}
+#footer{background:none}
+#footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
+@media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/styles/github.min.css">
+</head>
+<body class="article">
+<div id="header">
+<h1>Lista de Exercícios - Processamento Digital de Imagens (2026.2)</h1>
+<div class="details">
+<span id="author" class="author">Maria Clara Moura de Freitas (20230093652) &lt;maria.clarafreitas@hotmail.com&gt;</span><br>
+</div>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_capítulo_2">Capítulo 2</a>
+<ul class="sectlevel2">
+<li><a href="#_exercício_1">Exercício 1</a></li>
+<li><a href="#_exercício_2">Exercício 2</a></li>
+</ul>
+</li>
+<li><a href="#_capítulo_3">Capítulo 3</a>
+<ul class="sectlevel2">
+<li><a href="#_exercício_1_2">Exercício 1</a></li>
+<li><a href="#_exercício_2_2">Exercício 2</a></li>
+</ul>
+</li>
+<li><a href="#_capítulo_5">Capítulo 5</a>
+<ul class="sectlevel2">
+<li><a href="#_exercício_1_3">Exercício 1</a></li>
+</ul>
+</li>
+<li><a href="#_capítulo_6">Capítulo 6</a>
+<ul class="sectlevel2">
+<li><a href="#_exercício_1_4">Exercício 1</a></li>
+<li><a href="#_exercício_2_3">Exercício 2</a></li>
+</ul>
+</li>
+<li><a href="#_capítulo_7">Capítulo 7</a>
+<ul class="sectlevel2">
+<li><a href="#_exercício_1_5">Exercício 1</a></li>
+<li><a href="#_exercício_2_4">Exercício 2</a></li>
+</ul>
+</li>
+<li><a href="#_capítulo_8">Capítulo 8</a>
+<ul class="sectlevel2">
+<li><a href="#_exercício_1_6">Exercício 1</a></li>
+</ul>
+</li>
+<li><a href="#_capítulo_10">Capítulo 10</a>
+<ul class="sectlevel2">
+<li><a href="#_exercício_1_7">Exercício 1</a></li>
+</ul>
+</li>
+<li><a href="#_capítulo_11">Capítulo 11</a>
+<ul class="sectlevel2">
+<li><a href="#_exercício_1_8">Exercício 1</a></li>
+<li><a href="#_exercício_2_5">Exercício 2</a></li>
+</ul>
+</li>
+<li><a href="#_capítulo_12">Capítulo 12</a>
+<ul class="sectlevel2">
+<li><a href="#_exercício_1_9">Exercício 1</a></li>
+<li><a href="#_exercício_2_6">Exercício 2</a></li>
+</ul>
+</li>
+<li><a href="#_capítulo_13">Capítulo 13</a>
+<ul class="sectlevel2">
+<li><a href="#_exercício_1_10">Exercício 1</a></li>
+</ul>
+</li>
+<li><a href="#_capítulo_14">Capítulo 14</a>
+<ul class="sectlevel2">
+<li><a href="#_exercício_1_11">Exercício 1</a></li>
+<li><a href="#_exercício_2_7">Exercício 2</a></li>
+</ul>
+</li>
+<li><a href="#_capítulo_15">Capítulo 15</a>
+<ul class="sectlevel2">
+<li><a href="#_exercício_1_12">Exercício 1</a></li>
+<li><a href="#_exercício_2_8">Exercício 2</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Esta página documenta os exercícios desenvolvidos para a disciplina de Processamento Digital de Imagens, ofertada pela UFRN no semestre 2026.2.</p>
+</div>
+<div class="paragraph">
+<p>Todos os códigos estão disponiveis em meu <a href="https://github.com/mclarafreitas/pdi" class="external" target="_blank" rel="noopener">GitHub</a> e todos os exercicios estão localizados na página pessoal do professor <a href="https://agostinhobritojr.github.io/tutorial/pdi/" class="external" target="_blank" rel="noopener">Agostinho Brito</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_capítulo_2">Capítulo 2</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_exercício_1">Exercício 1</h3>
+<div class="paragraph">
+<p>A tarefa consiste em implementar o programa regions.cpp, utilizando o pixels.cpp como referência, para solicitar as coordenadas de dois pontos da imagem e aplicar o efeito de negativo (255 - pixel) na região retangular delimitada por eles, mantendo o restante da imagem inalterado; para isso, foi utilizada a biblioteca OpenCV, carregando a imagem em escala de cinza, validando as coordenadas e invertendo os pixels da região selecionada.</p>
+</div>
+<div class="listingblock">
+<div class="title">Código pixels.cpp</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">#include &lt;iostream&gt;
+#include &lt;opencv2/opencv.hpp&gt;
+
+int main(int, char**) {
+  cv::Mat image;
+  cv::Vec3b val;
+
+  image = cv::imread("bolhas.png", cv::IMREAD_GRAYSCALE);
+  if (!image.data) std::cout &lt;&lt; "nao abriu bolhas.png" &lt;&lt; std::endl;
+
+  cv::namedWindow("janela", cv::WINDOW_AUTOSIZE);
+
+  for (int i = 200; i &lt; 210; i++) {
+    for (int j = 10; j &lt; 200; j++) {
+      image.at&lt;uchar&gt;(i, j) = 0;
+    }
+  }
+
+  cv::imshow("janela", image);
+  cv::waitKey();
+
+  image = cv::imread("bolhas.png", cv::IMREAD_COLOR);
+
+  val[0] = 0;    // B
+  val[1] = 0;    // G
+  val[2] = 255;  // R
+
+  for (int i = 200; i &lt; 210; i++) {
+    for (int j = 10; j &lt; 200; j++) {
+      image.at&lt;cv::Vec3b&gt;(i, j) = val;
+    }
+  }
+
+  cv::imshow("janela", image);
+  cv::waitKey();
+  return 0;
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Código regions.cpp</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">#include &lt;iostream&gt;
+#include &lt;opencv2/opencv.hpp&gt;
+
+int main(int, char**) {
+
+    cv::Mat image;
+
+    // Abre a imagem em tons de cinza
+    image = cv::imread("bolhas.png", cv::IMREAD_GRAYSCALE);
+
+    if (!image.data) {
+        std::cout &lt;&lt; "Nao abriu bolhas.png" &lt;&lt; std::endl;
+        return -1;
+    }
+
+    // Dimensoes da imagem
+    int largura = image.cols;
+    int altura = image.rows;
+
+    std::cout &lt;&lt; "Tamanho da imagem: "
+              &lt;&lt; largura &lt;&lt; " x " &lt;&lt; altura &lt;&lt; std::endl;
+
+    // Coordenadas dos dois pontos
+    int x1, y1, x2, y2;
+
+    std::cout &lt;&lt; "Digite as coordenadas do primeiro ponto (x y): ";
+    std::cin &gt;&gt; x1 &gt;&gt; y1;
+
+    std::cout &lt;&lt; "Digite as coordenadas do segundo ponto (x y): ";
+    std::cin &gt;&gt; x2 &gt;&gt; y2;
+
+    // Verifica se as coordenadas estao dentro da imagem
+    if (x1 &lt; 0 || x1 &gt;= largura ||
+        x2 &lt; 0 || x2 &gt;= largura ||
+        y1 &lt; 0 || y1 &gt;= altura ||
+        y2 &lt; 0 || y2 &gt;= altura) {
+
+        std::cout &lt;&lt; "Coordenadas fora dos limites da imagem!"
+                  &lt;&lt; std::endl;
+
+        return -1;
+    }
+
+    // Garante que x1 &lt;= x2 e y1 &lt;= y2
+    int xmin = std::min(x1, x2);
+    int xmax = std::max(x1, x2);
+    int ymin = std::min(y1, y2);
+    int ymax = std::max(y1, y2);
+
+    // Inverte os pixels dentro da regiao
+    for (int y = ymin; y &lt;= ymax; y++) {
+        for (int x = xmin; x &lt;= xmax; x++) {
+
+            image.at&lt;uchar&gt;(y, x) =
+                255 - image.at&lt;uchar&gt;(y, x);
+        }
+    }
+
+    // Exibe a imagem
+    cv::namedWindow("janela", cv::WINDOW_AUTOSIZE);
+    cv::imshow("janela", image);
+    cv::waitKey();
+
+    return 0;
+}</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="cap2ex1_regions.png" alt="regions.cpp">
+</div>
+<div class="title">Figure 1. Saída do programa regions.cpp utilizando as coordenadas do primeiro ponto x. y como 100 100 e do segundo ponto 200 200</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_exercício_2">Exercício 2</h3>
+<div class="paragraph">
+<p>A tarefa consiste em implementar o programa trocaregioes.cpp, utilizando o pixels.cpp como referência, para dividir a imagem em quatro quadrantes e trocar entre si os quadrantes que estão em diagonal, utilizando a classe cv::Mat para criar e manipular as regiões da imagem; a implementação considera que as dimensões da imagem são múltiplas de 2, facilitando a divisão e a troca dos quadrantes.
+.Código trocaregioes.cpp</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">#include &lt;iostream&gt;
+#include &lt;opencv2/opencv.hpp&gt;
+
+int main(int, char**) {
+
+    cv::Mat image;
+
+    // Carrega a imagem em escala de cinza
+    image = cv::imread("bolhas.png", cv::IMREAD_GRAYSCALE);
+
+    if (!image.data) {
+        std::cout &lt;&lt; "Nao abriu bolhas.png" &lt;&lt; std::endl;
+        return -1;
+    }
+
+    // Dimensoes da imagem
+    int largura = image.cols;
+    int altura = image.rows;
+
+    // Como a imagem possui dimensoes multiplas de 2,
+    // podemos dividir largura e altura pela metade.
+    int metadeLargura = largura / 2;
+    int metadeAltura = altura / 2;
+
+    // Cria os quatro quadrantes da imagem usando cv::Mat e cv::Rect
+    cv::Mat superiorEsquerdo(
+        image,
+        cv::Rect(0, 0, metadeLargura, metadeAltura)
+    );
+
+    cv::Mat superiorDireito(
+        image,
+        cv::Rect(metadeLargura, 0, metadeLargura, metadeAltura)
+    );
+
+    cv::Mat inferiorEsquerdo(
+        image,
+        cv::Rect(0, metadeAltura, metadeLargura, metadeAltura)
+    );
+
+    cv::Mat inferiorDireito(
+        image,
+        cv::Rect(metadeLargura, metadeAltura,
+                 metadeLargura, metadeAltura)
+    );
+
+    // Guarda temporariamente os quadrantes antes da troca
+    cv::Mat tempSuperiorEsquerdo = superiorEsquerdo.clone();
+    cv::Mat tempSuperiorDireito = superiorDireito.clone();
+
+    // Troca os quadrantes na diagonal
+    inferiorDireito.copyTo(superiorEsquerdo);
+    tempSuperiorEsquerdo.copyTo(inferiorDireito);
+
+    inferiorEsquerdo.copyTo(superiorDireito);
+    tempSuperiorDireito.copyTo(inferiorEsquerdo);
+
+    // Exibe a imagem modificada
+    cv::namedWindow("janela", cv::WINDOW_AUTOSIZE);
+    cv::imshow("janela", image);
+    cv::waitKey();
+
+    return 0;
+}</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="cap2ex2_trocaregioes.png" alt="trocaregioes.cpp">
+</div>
+<div class="title">Figure 2. Saída do programa trocaregioes.cpp</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_capítulo_3">Capítulo 3</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_exercício_1_2">Exercício 1</h3>
+<div class="paragraph">
+<p>O programa foi adaptado para converter cada frame do vídeo original, inicialmente no espaço de cores BGR, para tons de cinza utilizando a função cv::cvtColor(). Os frames convertidos são então armazenados no arquivo output_gray.avi por meio do VideoWriter. Dessa forma, o vídeo de saída apresenta somente informações de intensidade luminosa, sem informações de cor.</p>
+</div>
+<div class="listingblock">
+<div class="title">Código video_gray.c</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-c hljs" data-lang="c">#include &lt;iostream&gt;
+#include &lt;opencv2/opencv.hpp&gt;
+
+int main(int argc, char** argv) {
+
+    if (argc &lt; 2) {
+        std::cout &lt;&lt; "Uso: ./video_gray &lt;video&gt;\n";
+        return -1;
+    }
+
+    cv::VideoCapture cap(argv[1]);
+
+    if (!cap.isOpened()) {
+        std::cout &lt;&lt; "Erro ao abrir o video: " &lt;&lt; argv[1] &lt;&lt; "\n";
+        return -1;
+    }
+
+    int width = static_cast&lt;int&gt;(cap.get(cv::CAP_PROP_FRAME_WIDTH));
+    int height = static_cast&lt;int&gt;(cap.get(cv::CAP_PROP_FRAME_HEIGHT));
+    double fps = cap.get(cv::CAP_PROP_FPS);
+
+    std::cout &lt;&lt; "Largura: " &lt;&lt; width &lt;&lt; "\n";
+    std::cout &lt;&lt; "Altura: " &lt;&lt; height &lt;&lt; "\n";
+    std::cout &lt;&lt; "FPS: " &lt;&lt; fps &lt;&lt; "\n";
+
+    cv::Size frameSize(width, height);
+
+    // Codec MJPG
+    cv::VideoWriter out(
+        "output_gray.avi",
+        cv::VideoWriter::fourcc('M', 'J', 'P', 'G'),
+        fps,
+        frameSize,
+        false
+    );
+
+    if (!out.isOpened()) {
+        std::cout &lt;&lt; "Erro ao criar o video de saida!\n";
+        return -1;
+    }
+
+    cv::Mat frame;
+    cv::Mat gray;
+
+    int counter = 0;
+
+    while (cap.read(frame)) {
+
+        // Converte BGR para tons de cinza
+        cv::cvtColor(frame, gray, cv::COLOR_BGR2GRAY);
+
+        // Grava o frame em tons de cinza
+        out.write(gray);
+
+        // Mostra o resultado
+        cv::imshow("Video em tons de cinza", gray);
+
+        counter++;
+
+        // Pressione ESC para interromper
+        if (cv::waitKey(30) == 27)
+            break;
+    }
+
+    std::cout &lt;&lt; "Numero de frames: " &lt;&lt; counter &lt;&lt; "\n";
+
+    cap.release();
+    out.release();
+    cv::destroyAllWindows();
+
+    return 0;
+}</code></pre>
+</div>
+</div>
+<video controls width="640">
+  <source src="output_gray.avi" type="video/avi">
+</video>
+</div>
+<div class="sect2">
+<h3 id="_exercício_2_2">Exercício 2</h3>
+<div class="paragraph">
+<p>O programa foi adaptado para aplicar o efeito de negativo em cada quadro do vídeo antes de armazená-lo no arquivo de saída. Para isso, foi utilizada a função cv::bitwise_not(), que inverte os valores dos pixels da imagem. Dessa forma, os valores de intensidade são transformados de acordo com a relação \(I_{negativo}=255-I\), produzindo o efeito de negativo no vídeo. O vídeo resultante foi armazenado no arquivo output_negative.avi.
+.Código video_negative.c</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-c hljs" data-lang="c">#include &lt;iostream&gt;
+#include &lt;opencv2/opencv.hpp&gt;
+
+int main(int argc, char** argv) {
+
+    if (argc &lt; 2) {
+        std::cout &lt;&lt; "Uso: ./video_negative &lt;video&gt;\n";
+        return -1;
+    }
+
+    cv::VideoCapture cap(argv[1]);
+
+    if (!cap.isOpened()) {
+        std::cout &lt;&lt; "Erro ao abrir o video!\n";
+        return -1;
+    }
+
+    int width = static_cast&lt;int&gt;(cap.get(cv::CAP_PROP_FRAME_WIDTH));
+    int height = static_cast&lt;int&gt;(cap.get(cv::CAP_PROP_FRAME_HEIGHT));
+    double fps = cap.get(cv::CAP_PROP_FPS);
+
+    std::cout &lt;&lt; "Largura = " &lt;&lt; width &lt;&lt; "\n";
+    std::cout &lt;&lt; "Altura = " &lt;&lt; height &lt;&lt; "\n";
+    std::cout &lt;&lt; "FPS = " &lt;&lt; fps &lt;&lt; "\n";
+
+    cv::Size frameSize(width, height);
+
+    cv::VideoWriter out(
+        "output_negative.avi",
+        cv::VideoWriter::fourcc('M', 'J', 'P', 'G'),
+        fps,
+        frameSize,
+        true
+    );
+
+    if (!out.isOpened()) {
+        std::cout &lt;&lt; "Erro ao criar o video de saida!\n";
+        return -1;
+    }
+
+    cv::Mat frame;
+    cv::Mat negative;
+
+    int counter = 0;
+
+    while (cap.read(frame)) {
+
+        // Aplica o negativo ao frame
+        cv::bitwise_not(frame, negative);
+
+        // Grava o frame negativo
+        out.write(negative);
+
+        // Mostra o resultado
+        cv::imshow("Video negativo", negative);
+
+        counter++;
+
+        // Pressione ESC para encerrar
+        if (cv::waitKey(30) == 27)
+            break;
+    }
+
+    std::cout &lt;&lt; "Numero de frames: " &lt;&lt; counter &lt;&lt; "\n";
+
+    cap.release();
+    out.release();
+    cv::destroyAllWindows();
+
+    return 0;
+}</code></pre>
+</div>
+</div>
+<video controls width="640">
+  <source src="output_negative.avi" type="video/avi">
+</video>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_capítulo_5">Capítulo 5</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_exercício_1_3">Exercício 1</h3>
+<div class="paragraph">
+<p>Ao comparar uma linha das imagens armazenadas em YML e PNG, observa-se que a diferença não é exatamente zero, embora visualmente as imagens sejam praticamente iguais. Isso ocorre porque o YML armazena a matriz em ponto flutuante (CV_32FC1), preservando os valores calculados pela senoide, enquanto o PNG é normalizado para o intervalo [0,255] e convertido para CV_8U. Essa conversão provoca quantização dos valores, fazendo com que pequenas diferenças apareçam entre os pixels correspondentes.
+.Código filestorage.cpp</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">#include &lt;iostream&gt;
+#include &lt;opencv2/opencv.hpp&gt;
+#include &lt;fstream&gt;
+#include &lt;cmath&gt;
+
+using namespace std;
+
+const int SIDE = 256;
+const int PERIODOS = 4;
+const double PI = 3.14159265358979323846;
+
+int main() {
+
+    string ymlFile = "senoide-256.yml";
+    string pngFile = "senoide-256.png";
+
+    // -------------------------------------------------
+    // 1. Criar a imagem em ponto flutuante
+    // -------------------------------------------------
+
+    cv::Mat image = cv::Mat::zeros(SIDE, SIDE, CV_32FC1);
+
+    for (int i = 0; i &lt; SIDE; i++) {
+        for (int j = 0; j &lt; SIDE; j++) {
+
+            image.at&lt;float&gt;(i, j) =
+                127.0f * sin(2.0 * PI * PERIODOS * j / SIDE)
+                + 128.0f;
+        }
+    }
+
+    // -------------------------------------------------
+    // 2. Salvar a imagem original no YML
+    // -------------------------------------------------
+
+    cv::FileStorage fs(ymlFile, cv::FileStorage::WRITE);
+
+    if (!fs.isOpened()) {
+        cerr &lt;&lt; "Erro ao abrir o arquivo YML." &lt;&lt; endl;
+        return -1;
+    }
+
+    fs &lt;&lt; "mat" &lt;&lt; image;
+    fs.release();
+
+    // -------------------------------------------------
+    // 3. Preparar e salvar a imagem como PNG
+    // -------------------------------------------------
+
+    cv::Mat imagePNG;
+
+    cv::normalize(
+        image,
+        imagePNG,
+        0,
+        255,
+        cv::NORM_MINMAX
+    );
+
+    imagePNG.convertTo(imagePNG, CV_8U);
+
+    if (!cv::imwrite(pngFile, imagePNG)) {
+        cerr &lt;&lt; "Erro ao salvar PNG." &lt;&lt; endl;
+        return -1;
+    }
+
+    // -------------------------------------------------
+    // 4. Ler novamente o YML
+    // -------------------------------------------------
+
+    cv::Mat imageYML;
+
+    fs.open(ymlFile, cv::FileStorage::READ);
+
+    if (!fs.isOpened()) {
+        cerr &lt;&lt; "Erro ao abrir YML para leitura." &lt;&lt; endl;
+        return -1;
+    }
+
+    fs["mat"] &gt;&gt; imageYML;
+    fs.release();
+
+    // -------------------------------------------------
+    // 5. Escolher uma linha para comparação
+    // -------------------------------------------------
+
+    int linha = 128;
+
+    ofstream arquivoDiff("diferenca.txt");
+
+    if (!arquivoDiff.is_open()) {
+        cerr &lt;&lt; "Erro ao criar diferenca.txt." &lt;&lt; endl;
+        return -1;
+    }
+
+    // -------------------------------------------------
+    // 6. Comparar YML x PNG
+    // -------------------------------------------------
+
+    double maxDiff = 0.0;
+    double somaDiff = 0.0;
+
+    for (int j = 0; j &lt; SIDE; j++) {
+
+        float valorYML = imageYML.at&lt;float&gt;(linha, j);
+        float valorPNG = imagePNG.at&lt;uchar&gt;(linha, j);
+
+        float diferenca = valorYML - valorPNG;
+
+        arquivoDiff &lt;&lt; j &lt;&lt; " " &lt;&lt; diferenca &lt;&lt; endl;
+
+        maxDiff = max(maxDiff, abs((double)diferenca));
+        somaDiff += abs((double)diferenca);
+    }
+
+    arquivoDiff.close();
+
+    cout &lt;&lt; "Imagem gerada: " &lt;&lt; pngFile &lt;&lt; endl;
+    cout &lt;&lt; "Arquivo YML: " &lt;&lt; ymlFile &lt;&lt; endl;
+    cout &lt;&lt; "Linha comparada: " &lt;&lt; linha &lt;&lt; endl;
+    cout &lt;&lt; "Maior diferenca absoluta: " &lt;&lt; maxDiff &lt;&lt; endl;
+    cout &lt;&lt; "Diferenca absoluta media: "
+         &lt;&lt; somaDiff / SIDE &lt;&lt; endl;
+
+    // -------------------------------------------------
+    // 7. Mostrar as imagens
+    // -------------------------------------------------
+
+    cv::imshow("Senoide", imagePNG);
+    cv::waitKey(0);
+
+    return 0;
+}</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="cap5ex1.png" alt="Saída do Exercício 5.2">
+</div>
+<div class="title">Figure 3. Exercício 5.2</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_capítulo_6">Capítulo 6</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_exercício_1_4">Exercício 1</h3>
+<div class="paragraph">
+<p>Foram aplicados cinco colormaps diferentes (<code>AUTUMN</code>, <code>BONE</code>, <code>HOT</code>, <code>OCEAN</code> e <code>VIRIDIS</code>) à imagem original para comparar seus efeitos.
+.Código colormap.cpp</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">#include &lt;opencv2/opencv.hpp&gt;
+#include &lt;iostream&gt;
+
+int main(int argc, const char *argv[]) {
+
+    cv::Mat image, imagecolor;
+
+    image = cv::imread(argv[1], cv::IMREAD_GRAYSCALE);
+
+    if (!image.data) {
+        std::cout &lt;&lt; "Nao abriu a imagem" &lt;&lt; std::endl;
+        return -1;
+    }
+
+    // AUTUMN
+    cv::applyColorMap(image, imagecolor, cv::COLORMAP_AUTUMN);
+    cv::imshow("colormap_autumn", imagecolor);
+    cv::waitKey(0);
+
+    // BONE
+    cv::applyColorMap(image, imagecolor, cv::COLORMAP_BONE);
+    cv::imshow("colormap_bone", imagecolor);
+    cv::waitKey(0);
+
+    // HOT
+    cv::applyColorMap(image, imagecolor, cv::COLORMAP_HOT);
+    cv::imshow("colormap_hot", imagecolor);
+    cv::waitKey(0);
+
+    // OCEAN
+    cv::applyColorMap(image, imagecolor, cv::COLORMAP_OCEAN);
+    cv::imshow("colormap_ocean", imagecolor);
+    cv::waitKey(0);
+
+    // VIRIDIS
+    cv::applyColorMap(image, imagecolor, cv::COLORMAP_VIRIDIS);
+    cv::imshow("colormap_viridis", imagecolor);
+    cv::waitKey(0);
+
+    return 0;
+}</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="cap6ex1_autumn.png" alt="Saída do Exercício 6.1">
+</div>
+<div class="title">Figure 4. Exercício 6.1</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="cap6ex1_bone.png" alt="Saída do Exercício 6.1">
+</div>
+<div class="title">Figure 5. Exercício 6.1</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="cap6ex1_hot.png" alt="Saída do Exercício 6.1">
+</div>
+<div class="title">Figure 6. Exercício 6.1</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="cap6ex1_ocean.png" alt="Saída do Exercício 6.1">
+</div>
+<div class="title">Figure 7. Exercício 6.1</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="cap6ex1_viridis.png" alt="Saída do Exercício 6.1">
+</div>
+<div class="title">Figure 8. Exercício 6.1</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_exercício_2_3">Exercício 2</h3>
+<div class="paragraph">
+<p>Foi criada uma LUT com 256 cores, com transição de azul para vermelho, e aplicada à imagem utilizando <code>cv::applyColorMap</code>.
+.Código colormap_personalizado.cpp</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">#include &lt;opencv2/opencv.hpp&gt;
+#include &lt;iostream&gt;
+
+int main(int argc, const char *argv[]) {
+
+    if (argc &lt; 2) {
+        std::cout &lt;&lt; "Uso: ./colormap_personalizado imagem.png" &lt;&lt; std::endl;
+        return -1;
+    }
+
+    cv::Mat image, imagecolor;
+
+    // Abre a imagem em tons de cinza
+    image = cv::imread(argv[1], cv::IMREAD_GRAYSCALE);
+
+    if (!image.data) {
+        std::cout &lt;&lt; "Nao abriu a imagem" &lt;&lt; std::endl;
+        return -1;
+    }
+
+    // Cria uma LUT com 256 cores
+    cv::Mat lut(256, 1, CV_8UC3);
+
+    // Cria o colormap personalizado
+    for (int i = 0; i &lt; 256; i++) {
+
+        if (i &lt; 64) {
+            // Azul -&gt; Ciano
+            lut.at&lt;cv::Vec3b&gt;(i)[0] = 255;
+            lut.at&lt;cv::Vec3b&gt;(i)[1] = i * 4;
+            lut.at&lt;cv::Vec3b&gt;(i)[2] = 0;
+
+        } else if (i &lt; 128) {
+            // Ciano -&gt; Verde
+            lut.at&lt;cv::Vec3b&gt;(i)[0] = 255 - (i - 64) * 4;
+            lut.at&lt;cv::Vec3b&gt;(i)[1] = 255;
+            lut.at&lt;cv::Vec3b&gt;(i)[2] = 0;
+
+        } else if (i &lt; 192) {
+            // Verde -&gt; Amarelo
+            lut.at&lt;cv::Vec3b&gt;(i)[0] = 0;
+            lut.at&lt;cv::Vec3b&gt;(i)[1] = 255;
+            lut.at&lt;cv::Vec3b&gt;(i)[2] = (i - 128) * 4;
+
+        } else {
+            // Amarelo -&gt; Vermelho
+            lut.at&lt;cv::Vec3b&gt;(i)[0] = 0;
+            lut.at&lt;cv::Vec3b&gt;(i)[1] = 255 - (i - 192) * 4;
+            lut.at&lt;cv::Vec3b&gt;(i)[2] = 255;
+        }
+    }
+
+    // Aplica o colormap personalizado
+    cv::applyColorMap(image, imagecolor, lut);
+
+    // Exibe o resultado
+    cv::imshow("Colormap personalizado", imagecolor);
+
+    cv::waitKey(0);
+
+    return 0;
+}</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="cap6ex2_personalizado.png" alt="Saída do Exercício 6.2">
+</div>
+<div class="title">Figure 9. Exercício 6.2</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_capítulo_7">Capítulo 7</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_exercício_1_5">Exercício 1</h3>
+<div class="paragraph">
+<p>Foram utilizados cinco colormaps disponíveis no OpenCV: JET, OCEAN, PINK, TWILIGHT e TURBO. Cada um foi aplicado ao canal H (matiz) da imagem convertida para o espaço de cores HSV. Os resultados demonstram como diferentes mapas de cores podem representar os valores de intensidade do canal H de maneiras distintas, facilitando a visualização das informações presentes na imagem.
+.Código colorspace.cpp</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">#include &lt;iostream&gt;
+#include &lt;opencv2/opencv.hpp&gt;
+#include &lt;vector&gt;
+
+int main(int argc, char** argv) {
+
+    cv::Mat image;
+    cv::Mat hsv;
+    cv::Mat h, s, v;
+
+    std::vector&lt;cv::Mat&gt; planes;
+
+    if (argc != 2) {
+        std::cerr &lt;&lt; "Uso: " &lt;&lt; argv[0] &lt;&lt; " &lt;Image_Path&gt;\n";
+        return -1;
+    }
+
+    image = cv::imread(argv[1], cv::IMREAD_COLOR);
+
+    if (!image.data) {
+        std::cerr &lt;&lt; "Nao abriu " &lt;&lt; argv[1] &lt;&lt; std::endl;
+        return -1;
+    }
+
+    // Exibe imagem original
+    cv::namedWindow("Imagem original", cv::WINDOW_NORMAL);
+    cv::imshow("Imagem original", image);
+
+    // Converte para HSV
+    cv::cvtColor(image, image, cv::COLOR_BGR2HSV_FULL);
+
+    // Separa os canais H, S e V
+    cv::split(image, planes);
+
+    h = planes[0];
+    s = planes[1];
+    v = planes[2];
+
+    // Aplica 5 colormaps diferentes ao canal H
+
+    cv::Mat jet;
+    cv::applyColorMap(h, jet, cv::COLORMAP_JET);
+    cv::imshow("JET", jet);
+
+    cv::Mat ocean;
+    cv::applyColorMap(h, ocean, cv::COLORMAP_OCEAN);
+    cv::imshow("OCEAN", ocean);
+
+    cv::Mat pink;
+    cv::applyColorMap(h, pink, cv::COLORMAP_PINK);
+    cv::imshow("PINK", pink);
+
+    cv::Mat twilight;
+    cv::applyColorMap(h, twilight, cv::COLORMAP_TWILIGHT);
+    cv::imshow("TWILIGHT", twilight);
+
+    cv::Mat turbo;
+    cv::applyColorMap(h, turbo, cv::COLORMAP_TURBO);
+    cv::imshow("TURBO", turbo);
+
+    cv::waitKey();
+
+    return 0;
+}</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="cap7ex1.png" alt="Saída do Exercício 7.1">
+</div>
+<div class="title">Figure 10. Exercício 7.1</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_exercício_2_4">Exercício 2</h3>
+<div class="paragraph">
+<p>Foi implementado um colormap personalizado utilizando a função cv::applyColorMap() do OpenCV. Diferentemente dos mapas de cores predefinidos, foi criada uma LUT (Look-Up Table) contendo 256 cores, correspondentes aos possíveis valores de intensidade de uma imagem em tons de cinza.</p>
+</div>
+<div class="paragraph">
+<p>O colormap desenvolvido foi denominado “Ocean Fire”. Para baixas intensidades foram utilizadas cores frias, variando de azul escuro para azul. Nas intensidades intermediárias, as cores passam de azul para roxo e, posteriormente, para vermelho. Para as maiores intensidades, a cor passa de vermelho para amarelo.</p>
+</div>
+<div class="paragraph">
+<p>Dessa forma, o mapa permite visualizar as diferentes intensidades da imagem através de uma transição gradual entre cores frias e quentes. A tabela personalizada foi criada com o tipo CV_8UC3 e 256 posições, conforme especificado pela documentação do OpenCV para a utilização de um userColor.</p>
+</div>
+<div class="listingblock">
+<div class="title">Código colorspace_custom.cpp</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">#include &lt;iostream&gt;
+#include &lt;opencv2/opencv.hpp&gt;
+
+int main(int argc, char** argv) {
+
+    cv::Mat image, imageColor;
+
+    if (argc != 2) {
+        std::cerr &lt;&lt; "Uso: " &lt;&lt; argv[0] &lt;&lt; " &lt;Image_Path&gt;\n";
+        return -1;
+    }
+
+    // Abre a imagem em tons de cinza
+    image = cv::imread(argv[1], cv::IMREAD_GRAYSCALE);
+
+    if (image.empty()) {
+        std::cerr &lt;&lt; "Nao abriu " &lt;&lt; argv[1] &lt;&lt; std::endl;
+        return -1;
+    }
+
+    // Cria uma LUT com 256 cores
+    // 256 linhas x 1 coluna, 3 canais (BGR)
+    cv::Mat colormap(256, 1, CV_8UC3);
+
+    for (int i = 0; i &lt; 256; i++) {
+
+        uchar B, G, R;
+
+        if (i &lt; 64) {
+            // Azul escuro -&gt; Azul
+            B = 80 + i * 175 / 63;
+            G = 0;
+            R = 0;
+        }
+        else if (i &lt; 128) {
+            // Azul -&gt; Roxo
+            B = 255;
+            G = 0;
+            R = (i - 64) * 180 / 63;
+        }
+        else if (i &lt; 192) {
+            // Roxo -&gt; Vermelho
+            B = 255 - (i - 128) * 255 / 63;
+            G = 0;
+            R = 180 + (i - 128) * 75 / 63;
+        }
+        else {
+            // Vermelho -&gt; Amarelo
+            B = 0;
+            G = (i - 192) * 255 / 63;
+            R = 255;
+        }
+
+        colormap.at&lt;cv::Vec3b&gt;(i, 0) = cv::Vec3b(B, G, R);
+    }
+
+    // Aplica o colormap personalizado
+    cv::applyColorMap(image, imageColor, colormap);
+
+    // Exibe a imagem original
+    cv::namedWindow("Imagem original", cv::WINDOW_NORMAL);
+    cv::imshow("Imagem original", image);
+
+    // Exibe a imagem colorida
+    cv::namedWindow("Colormap personalizado", cv::WINDOW_NORMAL);
+    cv::imshow("Colormap personalizado", imageColor);
+
+    cv::waitKey(0);
+
+    return 0;
+}</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="cap7ex2_custom.png" alt="Saída do Exercício 7.2">
+</div>
+<div class="title">Figure 11. Exercício 7.2</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_capítulo_8">Capítulo 8</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_exercício_1_6">Exercício 1</h3>
+<div class="paragraph">
+<p>O objetivo foi implementar uma seleção interativa de pixels baseada no programa colorrange.cpp, permitindo adicionar pixels com o botão esquerdo e removê-los com o botão direito. A partir dos pixels selecionados, foi calculada uma faixa de cores utilizada para segmentar a imagem com inRange(), permitindo identificar regiões com cores semelhantes, como a bola presente na imagem.
+.Código interativo2.cpp</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">#include &lt;iostream&gt;
+#include &lt;opencv2/opencv.hpp&gt;
+
+cv::Mat image;
+cv::Mat selectedMask;
+cv::Mat colorMask;
+
+bool painting = false;
+bool removing = false;
+
+cv::Point previousPoint;
+
+// ---------------------------------------------------------
+// Mouse
+// ---------------------------------------------------------
+
+static void onMouse(int event, int x, int y, int flags, void*)
+{
+    // Botão esquerdo: adicionar
+    if (event == cv::EVENT_LBUTTONDOWN)
+    {
+        painting = true;
+        removing = false;
+
+        previousPoint = cv::Point(x, y);
+
+        cv::circle(
+            selectedMask,
+            cv::Point(x, y),
+            8,
+            cv::Scalar(255),
+            -1
+        );
+    }
+
+    // Botão direito: remover
+    else if (event == cv::EVENT_RBUTTONDOWN)
+    {
+        painting = true;
+        removing = true;
+
+        previousPoint = cv::Point(x, y);
+
+        cv::circle(
+            selectedMask,
+            cv::Point(x, y),
+            8,
+            cv::Scalar(0),
+            -1
+        );
+    }
+
+    // Arrastando o mouse
+    else if (event == cv::EVENT_MOUSEMOVE &amp;&amp; painting)
+    {
+        cv::Point currentPoint(x, y);
+
+        if (removing)
+        {
+            // Remove pixels
+            cv::line(
+                selectedMask,
+                previousPoint,
+                currentPoint,
+                cv::Scalar(0),
+                15
+            );
+        }
+        else
+        {
+            // Adiciona pixels
+            cv::line(
+                selectedMask,
+                previousPoint,
+                currentPoint,
+                cv::Scalar(255),
+                15
+            );
+        }
+
+        previousPoint = currentPoint;
+    }
+
+    // Soltou o botão
+    else if (
+        event == cv::EVENT_LBUTTONUP ||
+        event == cv::EVENT_RBUTTONUP
+    )
+    {
+        painting = false;
+        removing = false;
+    }
+}
+
+// ---------------------------------------------------------
+// Calcula a faixa de cores
+// ---------------------------------------------------------
+
+void calculateColorRange()
+{
+    if (cv::countNonZero(selectedMask) == 0)
+    {
+        std::cout &lt;&lt; "Nenhum pixel selecionado." &lt;&lt; std::endl;
+        return;
+    }
+
+    int minB = 255;
+    int minG = 255;
+    int minR = 255;
+
+    int maxB = 0;
+    int maxG = 0;
+    int maxR = 0;
+
+    // Percorre a imagem
+    for (int y = 0; y &lt; image.rows; y++)
+    {
+        for (int x = 0; x &lt; image.cols; x++)
+        {
+            // Só utiliza os pixels pintados
+            if (selectedMask.at&lt;uchar&gt;(y, x) &gt; 0)
+            {
+                cv::Vec3b pixel = image.at&lt;cv::Vec3b&gt;(y, x);
+
+                int B = pixel[0];
+                int G = pixel[1];
+                int R = pixel[2];
+
+                if (B &lt; minB) minB = B;
+                if (G &lt; minG) minG = G;
+                if (R &lt; minR) minR = R;
+
+                if (B &gt; maxB) maxB = B;
+                if (G &gt; maxG) maxG = G;
+                if (R &gt; maxR) maxR = R;
+            }
+        }
+    }
+
+    // Pequena tolerância
+    int tolerance = 10;
+
+    cv::Scalar lower(
+        std::max(0, minB - tolerance),
+        std::max(0, minG - tolerance),
+        std::max(0, minR - tolerance)
+    );
+
+    cv::Scalar upper(
+        std::min(255, maxB + tolerance),
+        std::min(255, maxG + tolerance),
+        std::min(255, maxR + tolerance)
+    );
+
+    std::cout &lt;&lt; std::endl;
+
+    std::cout &lt;&lt; "Pixels selecionados: "
+              &lt;&lt; cv::countNonZero(selectedMask)
+              &lt;&lt; std::endl;
+
+    std::cout &lt;&lt; "BGR minimo: "
+              &lt;&lt; minB &lt;&lt; ", "
+              &lt;&lt; minG &lt;&lt; ", "
+              &lt;&lt; minR
+              &lt;&lt; std::endl;
+
+    std::cout &lt;&lt; "BGR maximo: "
+              &lt;&lt; maxB &lt;&lt; ", "
+              &lt;&lt; maxG &lt;&lt; ", "
+              &lt;&lt; maxR
+              &lt;&lt; std::endl;
+
+    std::cout &lt;&lt; "Limite inferior: "
+              &lt;&lt; lower
+              &lt;&lt; std::endl;
+
+    std::cout &lt;&lt; "Limite superior: "
+              &lt;&lt; upper
+              &lt;&lt; std::endl;
+
+    // Aplica a faixa de cores
+    cv::inRange(
+        image,
+        lower,
+        upper,
+        colorMask
+    );
+}
+
+// ---------------------------------------------------------
+// Mostra a seleção em vermelho
+// ---------------------------------------------------------
+
+void showImage()
+{
+    cv::Mat display;
+
+    image.copyTo(display);
+
+    cv::Mat red(
+        image.size(),
+        image.type(),
+        cv::Scalar(0, 0, 255)
+    );
+
+    cv::Mat overlay;
+
+    cv::addWeighted(
+        image,
+        0.5,
+        red,
+        0.5,
+        0,
+        overlay
+    );
+
+    overlay.copyTo(
+        display,
+        selectedMask
+    );
+
+    cv::imshow(
+        "Image",
+        display
+    );
+}
+
+// ---------------------------------------------------------
+// Main
+// ---------------------------------------------------------
+
+int main(int argc, const char** argv)
+{
+    if (argc &lt; 2)
+    {
+        std::cout
+            &lt;&lt; "Uso: "
+            &lt;&lt; argv[0]
+            &lt;&lt; " imagem"
+            &lt;&lt; std::endl;
+
+        return -1;
+    }
+
+    image = cv::imread(argv[1]);
+
+    if (image.empty())
+    {
+        std::cout
+            &lt;&lt; "Erro ao carregar a imagem."
+            &lt;&lt; std::endl;
+
+        return -1;
+    }
+
+    // Máscara da seleção manual
+    selectedMask = cv::Mat::zeros(
+        image.size(),
+        CV_8UC1
+    );
+
+    // Máscara final
+    colorMask = cv::Mat::zeros(
+        image.size(),
+        CV_8UC1
+    );
+
+    cv::namedWindow(
+        "Image",
+        cv::WINDOW_NORMAL
+    );
+
+    cv::namedWindow(
+        "Selection",
+        cv::WINDOW_NORMAL
+    );
+
+    cv::setMouseCallback(
+        "Image",
+        onMouse
+    );
+
+    while (true)
+    {
+        // Mostra imagem + seleção
+        showImage();
+
+        // Mostra resultado
+        cv::imshow(
+            "Selection",
+            colorMask
+        );
+
+        char key = cv::waitKey(10);
+
+        // ESC
+        if (key == 27)
+        {
+            break;
+        }
+
+        // ENTER
+        if (key == 13)
+        {
+            calculateColorRange();
+        }
+
+        // ESPAÇO
+        if (key == ' ')
+        {
+            calculateColorRange();
+        }
+
+        // C = limpar
+        if (key == 'c' || key == 'C')
+        {
+            selectedMask.setTo(0);
+            colorMask.setTo(0);
+
+            std::cout
+                &lt;&lt; "Selecao limpa."
+                &lt;&lt; std::endl;
+        }
+    }
+
+    cv::imwrite(
+        "selection.png",
+        colorMask
+    );
+
+    cv::imwrite(
+        "selected_pixels.png",
+        selectedMask
+    );
+
+    cv::destroyAllWindows();
+
+    return 0;
+}</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="cap8rx1.png" alt="Saída do Exercício 8.1">
+</div>
+<div class="title">Figure 12. Exercício 8.1</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_capítulo_10">Capítulo 10</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Foi implementado um programa para recuperar uma imagem escondida por esteganografia, utilizando como referência o bitplanes.cpp. O programa recebe a imagem esteganografada como parâmetro, extrai os 3 bits menos significativos de cada canal dos pixels e os desloca para os bits mais significativos, gerando a imagem recuperada em um novo arquivo.</p>
+</div>
+<div class="sect2">
+<h3 id="_exercício_1_7">Exercício 1</h3>
+<div class="listingblock">
+<div class="title">Código recupera.cpp</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">#include &lt;iostream&gt;
+#include &lt;opencv2/opencv.hpp&gt;
+
+int main(int argc, char** argv) {
+
+    if (argc != 2) {
+        std::cout &lt;&lt; "Uso: " &lt;&lt; argv[0] &lt;&lt; " &lt;imagem_esteganografada&gt;" &lt;&lt; std::endl;
+        return -1;
+    }
+
+    cv::Mat imagemEsteganografada;
+    cv::Mat imagemRecuperada;
+
+    int nbits = 3;
+
+    imagemEsteganografada = cv::imread(argv[1], cv::IMREAD_COLOR);
+
+    if (imagemEsteganografada.empty()) {
+        std::cout &lt;&lt; "Imagem nao carregou corretamente" &lt;&lt; std::endl;
+        return -1;
+    }
+
+    imagemRecuperada = cv::Mat::zeros(
+        imagemEsteganografada.size(),
+        imagemEsteganografada.type()
+    );
+
+    for (int i = 0; i &lt; imagemEsteganografada.rows; i++) {
+        for (int j = 0; j &lt; imagemEsteganografada.cols; j++) {
+
+            cv::Vec3b pixel = imagemEsteganografada.at&lt;cv::Vec3b&gt;(i, j);
+            cv::Vec3b recuperado;
+
+            // Pega os 3 bits menos significativos
+            // e coloca nos 3 bits mais significativos.
+            recuperado[0] = (pixel[0] &amp; 0x07) &lt;&lt; (8 - nbits);
+            recuperado[1] = (pixel[1] &amp; 0x07) &lt;&lt; (8 - nbits);
+            recuperado[2] = (pixel[2] &amp; 0x07) &lt;&lt; (8 - nbits);
+
+            imagemRecuperada.at&lt;cv::Vec3b&gt;(i, j) = recuperado;
+        }
+    }
+
+    cv::imwrite("imagem-recuperada.png", imagemRecuperada);
+
+    std::cout &lt;&lt; "Imagem recuperada salva como: imagem-recuperada.png"
+              &lt;&lt; std::endl;
+
+    return 0;
+}</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="imagem-recuperada.png" alt="Saída do Exercício 10.1">
+</div>
+<div class="title">Figure 13. Exercício 10.1</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_capítulo_11">Capítulo 11</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_exercício_1_8">Exercício 1</h3>
+<div class="paragraph">
+<p>o problema ocorre quando o número de objetos ultrapassa 255, pois os rótulos armazenados em uma imagem CV_8U não conseguem representar valores maiores. Uma solução é utilizar uma estrutura de rótulos com maior profundidade, como CV_32S, usando connectedComponents() para realizar a rotulação.</p>
+</div>
+<div class="listingblock">
+<div class="title">Código ex1.cpp</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">#include &lt;iostream&gt;
+#include &lt;opencv2/opencv.hpp&gt;
+
+using namespace cv;
+using namespace std;
+
+int main(int argc, char** argv) {
+
+    if (argc &lt; 2) {
+        cout &lt;&lt; "Uso: " &lt;&lt; argv[0] &lt;&lt; " &lt;imagem&gt;" &lt;&lt; endl;
+        return -1;
+    }
+
+    // Carrega a imagem em tons de cinza
+    Mat image = imread(argv[1], IMREAD_GRAYSCALE);
+
+    if (!image.data) {
+        cout &lt;&lt; "Imagem nao carregou corretamente" &lt;&lt; endl;
+        return -1;
+    }
+
+    cout &lt;&lt; image.cols &lt;&lt; "x" &lt;&lt; image.rows &lt;&lt; endl;
+
+    // Cria uma imagem binaria
+    // Pixels brancos (255) representam os objetos
+    Mat binary;
+
+    threshold(image, binary, 127, 255, THRESH_BINARY);
+
+    // Matriz para armazenar os rotulos
+    // CV_32S permite valores muito maiores que 255
+    Mat labels;
+
+    // Rotula os componentes conexos
+    int nobjects = connectedComponents(
+        binary,
+        labels,
+        8,
+        CV_32S
+    );
+
+    // O objeto 0 representa o fundo,
+    // por isso o numero de objetos e nobjects - 1
+    nobjects--;
+
+    cout &lt;&lt; "A figura tem "
+         &lt;&lt; nobjects
+         &lt;&lt; " bolhas" &lt;&lt; endl;
+
+    // Cria uma imagem para visualizacao
+    Mat visualization;
+
+    // Normaliza os rotulos para 0-255
+    normalize(
+        labels,
+        visualization,
+        0,
+        255,
+        NORM_MINMAX
+    );
+
+    visualization.convertTo(visualization, CV_8U);
+
+    // Mostra a imagem rotulada
+    imshow("Imagem rotulada", visualization);
+
+    // Salva o resultado
+    imwrite("labeling.png", visualization);
+
+    waitKey();
+
+    return 0;
+}</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="labeling.png" alt="Saída do Exercício 11.1">
+</div>
+<div class="title">Figure 14. Exercício 11.1</div>
+</div>
+<div class="paragraph">
+<p>Resultado:
+256x256
+A figura tem 32 bolhas</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_exercício_2_5">Exercício 2</h3>
+<div class="paragraph">
+<p>O algoritmo foi aprimorado para identificar objetos com e sem buracos internos, inclusive permitindo a existência de múltiplos buracos em um mesmo objeto. Além disso, objetos que tocam as bordas da imagem são desconsiderados da contagem. No teste realizado, foram encontrados 32 objetos na imagem, dos quais 21 não tocavam as bordas. Entre esses, 14 não possuíam buracos e 7 possuíam um buraco interno. Não foram encontrados objetos com mais de um buraco. Assim, o algoritmo conseguiu diferenciar corretamente as regiões com e sem buracos e ignorar os objetos que tocavam as bordas.</p>
+</div>
+<div class="listingblock">
+<div class="title">Código ex2.cpp</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">#include &lt;iostream&gt;
+#include &lt;opencv2/opencv.hpp&gt;
+
+using namespace cv;
+using namespace std;
+
+int main(int argc, char** argv) {
+
+    if (argc &lt; 2) {
+        cout &lt;&lt; "Uso: " &lt;&lt; argv[0] &lt;&lt; " &lt;imagem&gt;" &lt;&lt; endl;
+        return -1;
+    }
+
+    // Carrega a imagem
+    Mat image = imread(argv[1], IMREAD_GRAYSCALE);
+
+    if (image.empty()) {
+        cout &lt;&lt; "Imagem nao carregou corretamente" &lt;&lt; endl;
+        return -1;
+    }
+
+    cout &lt;&lt; image.cols &lt;&lt; "x" &lt;&lt; image.rows &lt;&lt; endl;
+
+    // ============================================================
+    // 1. Binarizacao
+    // ============================================================
+
+    Mat binary;
+
+    threshold(image, binary, 127, 255, THRESH_BINARY);
+
+    // ============================================================
+    // 2. Rotulacao dos objetos
+    // ============================================================
+
+    Mat labels;
+
+    int nobjects = connectedComponents(
+        binary,
+        labels,
+        8,
+        CV_32S
+    );
+
+    nobjects--;
+
+    cout &lt;&lt; "Objetos encontrados: "
+         &lt;&lt; nobjects &lt;&lt; endl;
+
+    // Contadores
+    int validObjects = 0;
+    int objectsWithHoles = 0;
+    int objectsWithoutHoles = 0;
+    int objectsWithMultipleHoles = 0;
+
+    // ============================================================
+    // 3. Analisa cada objeto
+    // ============================================================
+
+    for (int obj = 1; obj &lt;= nobjects; obj++) {
+
+        // --------------------------------------------------------
+        // Verifica se o objeto toca a borda da imagem
+        // --------------------------------------------------------
+
+        bool touchesBorder = false;
+
+        // Borda superior e inferior
+        for (int x = 0; x &lt; image.cols; x++) {
+
+            if (labels.at&lt;int&gt;(0, x) == obj ||
+                labels.at&lt;int&gt;(image.rows - 1, x) == obj) {
+
+                touchesBorder = true;
+                break;
+            }
+        }
+
+        // Borda esquerda e direita
+        if (!touchesBorder) {
+
+            for (int y = 0; y &lt; image.rows; y++) {
+
+                if (labels.at&lt;int&gt;(y, 0) == obj ||
+                    labels.at&lt;int&gt;(y, image.cols - 1) == obj) {
+
+                    touchesBorder = true;
+                    break;
+                }
+            }
+        }
+
+        // Se toca a borda, ignora
+        if (touchesBorder) {
+            continue;
+        }
+
+        validObjects++;
+
+        // --------------------------------------------------------
+        // Cria máscara do objeto
+        // --------------------------------------------------------
+
+        Mat objectMask = (labels == obj);
+
+        // --------------------------------------------------------
+        // Encontra os limites do objeto manualmente
+        // --------------------------------------------------------
+
+        int minX = image.cols;
+        int maxX = 0;
+        int minY = image.rows;
+        int maxY = 0;
+
+        for (int y = 0; y &lt; image.rows; y++) {
+
+            for (int x = 0; x &lt; image.cols; x++) {
+
+                if (labels.at&lt;int&gt;(y, x) == obj) {
+
+                    if (x &lt; minX) minX = x;
+                    if (x &gt; maxX) maxX = x;
+                    if (y &lt; minY) minY = y;
+                    if (y &gt; maxY) maxY = y;
+                }
+            }
+        }
+
+        // --------------------------------------------------------
+        // Cria uma região somente com o objeto
+        // --------------------------------------------------------
+
+        Rect roiRect(
+            minX,
+            minY,
+            maxX - minX + 1,
+            maxY - minY + 1
+        );
+
+        Mat roi = objectMask(roiRect);
+
+        // --------------------------------------------------------
+        // Inverte a imagem
+        //
+        // Objeto = preto
+        // Fundo/buracos = branco
+        // --------------------------------------------------------
+
+        Mat inverted;
+
+        bitwise_not(roi, inverted);
+
+        // --------------------------------------------------------
+        // Rotula as regiões brancas
+        // --------------------------------------------------------
+
+        Mat holeLabels;
+
+        int nregions = connectedComponents(
+            inverted,
+            holeLabels,
+            8,
+            CV_32S
+        );
+
+        int holes = 0;
+
+        // --------------------------------------------------------
+        // Procura regiões que NÃO tocam a borda da ROI
+        //
+        // Uma região branca que toca a borda é o fundo externo.
+        // Uma região branca fechada é um buraco.
+        // --------------------------------------------------------
+
+        for (int region = 1; region &lt; nregions; region++) {
+
+            bool touchesRoiBorder = false;
+
+            // Borda superior/inferior da ROI
+            for (int x = 0; x &lt; holeLabels.cols; x++) {
+
+                if (holeLabels.at&lt;int&gt;(0, x) == region ||
+                    holeLabels.at&lt;int&gt;(holeLabels.rows - 1, x) == region) {
+
+                    touchesRoiBorder = true;
+                    break;
+                }
+            }
+
+            // Borda esquerda/direita da ROI
+            if (!touchesRoiBorder) {
+
+                for (int y = 0; y &lt; holeLabels.rows; y++) {
+
+                    if (holeLabels.at&lt;int&gt;(y, 0) == region ||
+                        holeLabels.at&lt;int&gt;(y, holeLabels.cols - 1) == region) {
+
+                        touchesRoiBorder = true;
+                        break;
+                    }
+                }
+            }
+
+            // Se não toca a borda, é um buraco
+            if (!touchesRoiBorder) {
+                holes++;
+            }
+        }
+
+        // --------------------------------------------------------
+        // Classificação do objeto
+        // --------------------------------------------------------
+
+        if (holes == 0) {
+
+            objectsWithoutHoles++;
+
+            cout &lt;&lt; "Objeto " &lt;&lt; obj
+                 &lt;&lt; ": sem buracos" &lt;&lt; endl;
+
+        } else {
+
+            objectsWithHoles++;
+
+            cout &lt;&lt; "Objeto " &lt;&lt; obj
+                 &lt;&lt; ": " &lt;&lt; holes
+                 &lt;&lt; " buraco(s)" &lt;&lt; endl;
+
+            if (holes &gt; 1) {
+                objectsWithMultipleHoles++;
+            }
+        }
+    }
+
+    // ============================================================
+    // 4. Resultado
+    // ============================================================
+
+    cout &lt;&lt; endl;
+    cout &lt;&lt; "========== RESULTADO ==========" &lt;&lt; endl;
+
+    cout &lt;&lt; "Objetos validos: "
+         &lt;&lt; validObjects &lt;&lt; endl;
+
+    cout &lt;&lt; "Objetos sem buracos: "
+         &lt;&lt; objectsWithoutHoles &lt;&lt; endl;
+
+    cout &lt;&lt; "Objetos com buracos: "
+         &lt;&lt; objectsWithHoles &lt;&lt; endl;
+
+    cout &lt;&lt; "Objetos com mais de um buraco: "
+         &lt;&lt; objectsWithMultipleHoles &lt;&lt; endl;
+
+    // ============================================================
+    // 5. Visualizacao
+    // ============================================================
+
+    Mat visualization;
+
+    normalize(
+        labels,
+        visualization,
+        0,
+        255,
+        NORM_MINMAX
+    );
+
+    visualization.convertTo(visualization, CV_8U);
+
+    imshow("Objetos rotulados", visualization);
+
+    imwrite("labeling_holes.png", visualization);
+
+    waitKey();
+
+    return 0;
+}</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="labeling_holes.png" alt="Saída do Exercício 11.2">
+</div>
+<div class="title">Figure 15. Exercício 11.2</div>
+</div>
+<div class="paragraph">
+<p>Resultado:
+Objetos encontrados: 32
+Objetos válidos: 21
+Objetos sem buracos: 14
+Objetos com buracos: 7
+Objetos com mais de um buraco: 0</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_capítulo_12">Capítulo 12</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_exercício_1_9">Exercício 1</h3>
+<div class="paragraph">
+<p>Foi implementado o programa equalize.cpp, que captura imagens da câmera, converte cada quadro para tons de cinza e aplica a equalização do histograma com cv::equalizeHist(), permitindo observar a melhoria do contraste em diferentes condições de iluminação.</p>
+</div>
+<div class="listingblock">
+<div class="title">Código equalize.cpp</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">#include &lt;iostream&gt;
+#include &lt;opencv2/opencv.hpp&gt;
+#include "camera.hpp"
+
+int main(int argc, char** argv) {
+
+    cv::Mat image;
+    cv::Mat gray;
+    cv::Mat equalized;
+
+    int width, height;
+    int camera;
+    int key;
+
+    cv::VideoCapture cap;
+
+    // Seleciona a câmera disponível
+    camera = cameraEnumerator();
+    cap.open(camera);
+
+    if (!cap.isOpened()) {
+        std::cout &lt;&lt; "Cameras indisponiveis" &lt;&lt; std::endl;
+        return -1;
+    }
+
+    // Define a resolução
+    cap.set(cv::CAP_PROP_FRAME_WIDTH, 640);
+    cap.set(cv::CAP_PROP_FRAME_HEIGHT, 480);
+
+    width = cap.get(cv::CAP_PROP_FRAME_WIDTH);
+    height = cap.get(cv::CAP_PROP_FRAME_HEIGHT);
+
+    std::cout &lt;&lt; "largura = " &lt;&lt; width &lt;&lt; std::endl;
+    std::cout &lt;&lt; "altura  = " &lt;&lt; height &lt;&lt; std::endl;
+
+    while (1) {
+
+        // Captura um quadro
+        cap &gt;&gt; image;
+
+        if (image.empty()) {
+            std::cout &lt;&lt; "Erro ao capturar imagem." &lt;&lt; std::endl;
+            break;
+        }
+
+        // Converte para tons de cinza
+        cv::cvtColor(image, gray, cv::COLOR_BGR2GRAY);
+
+        // Equaliza o histograma
+        cv::equalizeHist(gray, equalized);
+
+        // Exibe a imagem equalizada
+        cv::imshow("Imagem Equalizada", equalized);
+
+        // ESC encerra
+        key = cv::waitKey(30);
+
+        if (key == 27)
+            break;
+    }
+
+    cap.release();
+    cv::destroyAllWindows();
+
+    return 0;
+}</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="cap12ex1.png" alt="Saída do Exercício 12.1">
+</div>
+<div class="title">Figure 16. Exercício 12.1</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_exercício_2_6">Exercício 2</h3>
+<div class="paragraph">
+<p>Foi implementado o programa motiondetector.cpp, que calcula continuamente o histograma em tons de cinza de cada quadro, compara o histograma atual com o anterior utilizando a distância de Bhattacharyya e ativa um alarme visual quando a diferença ultrapassa um limiar pré-estabelecido.</p>
+</div>
+<div class="listingblock">
+<div class="title">Código motiondetector.cpp</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">#include &lt;iostream&gt;
+#include &lt;opencv2/opencv.hpp&gt;
+
+int main(int argc, char** argv) {
+
+    cv::Mat image;
+    cv::Mat gray;
+
+    cv::Mat histAtual;
+    cv::Mat histAnterior;
+
+    // Número de bins do histograma
+    int nbins = 64;
+
+    float range[] = {0, 256};
+    const float* histrange = {range};
+
+    bool uniform = true;
+    bool accumulate = false;
+
+    // Limiar para ativar o alarme
+    double limiar = 0.30;
+
+    // Abre a câmera
+    cv::VideoCapture cap(0);
+
+    if (!cap.isOpened()) {
+        std::cout &lt;&lt; "Nao foi possivel abrir a camera." &lt;&lt; std::endl;
+        return -1;
+    }
+
+    // Define a resolução
+    cap.set(cv::CAP_PROP_FRAME_WIDTH, 640);
+    cap.set(cv::CAP_PROP_FRAME_HEIGHT, 480);
+
+    std::cout &lt;&lt; "Detector de movimento iniciado." &lt;&lt; std::endl;
+    std::cout &lt;&lt; "Limiar = " &lt;&lt; limiar &lt;&lt; std::endl;
+    std::cout &lt;&lt; "Pressione ESC para sair." &lt;&lt; std::endl;
+
+    bool primeiroFrame = true;
+
+    while (true) {
+
+        // Captura o frame
+        cap &gt;&gt; image;
+
+        if (image.empty()) {
+            std::cout &lt;&lt; "Erro ao capturar imagem." &lt;&lt; std::endl;
+            break;
+        }
+
+        // Converte para tons de cinza
+        cv::cvtColor(image, gray, cv::COLOR_BGR2GRAY);
+
+        // Calcula o histograma do frame atual
+        cv::calcHist(
+            &amp;gray,
+            1,
+            0,
+            cv::Mat(),
+            histAtual,
+            1,
+            &amp;nbins,
+            &amp;histrange,
+            uniform,
+            accumulate
+        );
+
+        // Normaliza o histograma
+        cv::normalize(
+            histAtual,
+            histAtual,
+            0,
+            1,
+            cv::NORM_MINMAX
+        );
+
+        // No primeiro frame não existe histograma anterior
+        if (primeiroFrame) {
+
+            histAtual.copyTo(histAnterior);
+            primeiroFrame = false;
+
+            cv::putText(
+                image,
+                "Inicializando...",
+                cv::Point(20, 40),
+                cv::FONT_HERSHEY_SIMPLEX,
+                1.0,
+                cv::Scalar(0, 255, 255),
+                2
+            );
+
+        } else {
+
+            // Compara o histograma atual com o anterior
+            double diferenca = cv::compareHist(
+                histAtual,
+                histAnterior,
+                cv::HISTCMP_BHATTACHARYYA
+            );
+
+            std::cout &lt;&lt; "Diferenca: " &lt;&lt; diferenca;
+
+            // Verifica se ultrapassou o limiar
+            if (diferenca &gt; limiar) {
+
+                std::cout &lt;&lt; " -&gt; MOVIMENTO DETECTADO!" &lt;&lt; std::endl;
+
+                // Alarme visual
+                cv::putText(
+                    image,
+                    "!!! MOVIMENTO DETECTADO !!!",
+                    cv::Point(20, 40),
+                    cv::FONT_HERSHEY_SIMPLEX,
+                    1.0,
+                    cv::Scalar(0, 0, 255),
+                    3
+                );
+
+                // Borda vermelha na imagem
+                cv::rectangle(
+                    image,
+                    cv::Point(0, 0),
+                    cv::Point(image.cols - 1, image.rows - 1),
+                    cv::Scalar(0, 0, 255),
+                    10
+                );
+
+            } else {
+
+                std::cout &lt;&lt; " -&gt; Sem movimento" &lt;&lt; std::endl;
+
+                cv::putText(
+                    image,
+                    "Sem movimento",
+                    cv::Point(20, 40),
+                    cv::FONT_HERSHEY_SIMPLEX,
+                    1.0,
+                    cv::Scalar(0, 255, 0),
+                    2
+                );
+            }
+
+            // O histograma atual passa a ser o anterior
+            histAtual.copyTo(histAnterior);
+        }
+
+        // Mostra a imagem
+        cv::imshow("Motion Detector", image);
+
+        // ESC para sair
+        int key = cv::waitKey(30);
+
+        if (key == 27)
+            break;
+    }
+
+    cap.release();
+    cv::destroyAllWindows();
+
+    return 0;
+}</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="cap12ex2cmovs.png" alt="Saída do Exercício 12.2">
+</div>
+<div class="title">Figure 17. Exercício 12.2</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="cap12ex2semmov.png" alt="Saída do Exercício 12.2">
+</div>
+<div class="title">Figure 18. Exercício 12.2</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_capítulo_13">Capítulo 13</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_exercício_1_10">Exercício 1</h3>
+<div class="paragraph">
+<p>O programa registro.cpp foi modificado para permitir a seleção interativa dos quatro pontos utilizados na correção de perspectiva. A seleção é realizada através de cliques do botão esquerdo do mouse sobre a imagem, seguindo a ordem: canto superior esquerdo, superior direito, inferior direito e inferior esquerdo. Após a seleção dos pontos, suas coordenadas são utilizadas para calcular a transformação projetiva, que é aplicada à imagem através da função warpPerspective(). A largura e a altura da imagem resultante também são determinadas automaticamente a partir das distâncias entre os pontos selecionados.</p>
+</div>
+<div class="listingblock">
+<div class="title">Código registro.cpp</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">#include &lt;opencv2/opencv.hpp&gt;
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+
+std::vector&lt;cv::Point2f&gt; pontos;
+
+// Callback do mouse
+void mouseCallback(int event, int x, int y, int flags, void* userdata)
+{
+    if (event == cv::EVENT_LBUTTONDOWN &amp;&amp; pontos.size() &lt; 4)
+    {
+        pontos.push_back(cv::Point2f(x, y));
+
+        std::cout &lt;&lt; "Ponto " &lt;&lt; pontos.size()
+                  &lt;&lt; ": (" &lt;&lt; x &lt;&lt; ", " &lt;&lt; y &lt;&lt; ")" &lt;&lt; std::endl;
+
+        cv::Mat* imagem = static_cast&lt;cv::Mat*&gt;(userdata);
+
+        // Desenha o ponto
+        cv::circle(
+            *imagem,
+            cv::Point(x, y),
+            5,
+            cv::Scalar(0, 0, 255),
+            -1
+        );
+
+        // Número do ponto
+        cv::putText(
+            *imagem,
+            std::to_string(pontos.size()),
+            cv::Point(x + 10, y),
+            cv::FONT_HERSHEY_SIMPLEX,
+            0.7,
+            cv::Scalar(0, 255, 0),
+            2
+        );
+
+        cv::imshow("Selecione os pontos", *imagem);
+    }
+}
+
+int main()
+{
+    // Carrega a imagem
+    cv::Mat image = cv::imread("voltimetro.png");
+
+    if (image.empty())
+    {
+        std::cerr &lt;&lt; "Erro ao carregar orca.jpg" &lt;&lt; std::endl;
+        return -1;
+    }
+
+    cv::Mat imagemSelecao = image.clone();
+
+    std::cout &lt;&lt; "Selecione os quatro pontos na imagem.\n";
+    std::cout &lt;&lt; "Ordem:\n";
+    std::cout &lt;&lt; "1 - Superior esquerdo\n";
+    std::cout &lt;&lt; "2 - Superior direito\n";
+    std::cout &lt;&lt; "3 - Inferior direito\n";
+    std::cout &lt;&lt; "4 - Inferior esquerdo\n\n";
+
+    cv::namedWindow("Selecione os pontos");
+
+    cv::setMouseCallback(
+        "Selecione os pontos",
+        mouseCallback,
+        &amp;imagemSelecao
+    );
+
+    cv::imshow("Selecione os pontos", imagemSelecao);
+
+    // Aguarda os quatro cliques
+    while (pontos.size() &lt; 4)
+    {
+        int tecla = cv::waitKey(30);
+
+        if (tecla == 27)
+        {
+            std::cout &lt;&lt; "Operacao cancelada." &lt;&lt; std::endl;
+            return 0;
+        }
+    }
+
+    std::cout &lt;&lt; "\nQuatro pontos selecionados!\n";
+
+    // Calcula largura
+    int largura = std::max(
+        (int)cv::norm(pontos[0] - pontos[1]),
+        (int)cv::norm(pontos[2] - pontos[3])
+    );
+
+    // Calcula altura
+    int altura = std::max(
+        (int)cv::norm(pontos[1] - pontos[2]),
+        (int)cv::norm(pontos[3] - pontos[0])
+    );
+
+    std::cout &lt;&lt; "Largura: " &lt;&lt; largura &lt;&lt; std::endl;
+    std::cout &lt;&lt; "Altura: " &lt;&lt; altura &lt;&lt; std::endl;
+
+    /*
+     * Pontos de destino
+     *
+     * 0 ---------------- 1
+     * |                  |
+     * |                  |
+     * 3 ---------------- 2
+     */
+    std::vector&lt;cv::Point2f&gt; destino;
+
+    destino.push_back(cv::Point2f(0, 0));
+    destino.push_back(cv::Point2f(largura - 1, 0));
+    destino.push_back(cv::Point2f(largura - 1, altura - 1));
+    destino.push_back(cv::Point2f(0, altura - 1));
+
+    /*
+     * Monta o sistema para calcular a homografia.
+     *
+     * Para cada ponto:
+     *
+     * x' = (h11*x + h12*y + h13) /
+     *      (h31*x + h32*y + 1)
+     *
+     * y' = (h21*x + h22*y + h23) /
+     *      (h31*x + h32*y + 1)
+     */
+
+    cv::Mat A(8, 8, CV_64F);
+    cv::Mat B(8, 1, CV_64F);
+
+    for (int i = 0; i &lt; 4; i++)
+    {
+        double x = pontos[i].x;
+        double y = pontos[i].y;
+
+        double xp = destino[i].x;
+        double yp = destino[i].y;
+
+        int linha = 2 * i;
+
+        // Equação para x'
+        A.at&lt;double&gt;(linha, 0) = x;
+        A.at&lt;double&gt;(linha, 1) = y;
+        A.at&lt;double&gt;(linha, 2) = 1;
+        A.at&lt;double&gt;(linha, 3) = 0;
+        A.at&lt;double&gt;(linha, 4) = 0;
+        A.at&lt;double&gt;(linha, 5) = 0;
+        A.at&lt;double&gt;(linha, 6) = -x * xp;
+        A.at&lt;double&gt;(linha, 7) = -y * xp;
+
+        B.at&lt;double&gt;(linha, 0) = xp;
+
+        // Equação para y'
+        A.at&lt;double&gt;(linha + 1, 0) = 0;
+        A.at&lt;double&gt;(linha + 1, 1) = 0;
+        A.at&lt;double&gt;(linha + 1, 2) = 0;
+        A.at&lt;double&gt;(linha + 1, 3) = x;
+        A.at&lt;double&gt;(linha + 1, 4) = y;
+        A.at&lt;double&gt;(linha + 1, 5) = 1;
+        A.at&lt;double&gt;(linha + 1, 6) = -x * yp;
+        A.at&lt;double&gt;(linha + 1, 7) = -y * yp;
+
+        B.at&lt;double&gt;(linha + 1, 0) = yp;
+    }
+
+    // Resolve o sistema
+    cv::Mat h;
+
+    cv::solve(
+        A,
+        B,
+        h,
+        cv::DECOMP_LU
+    );
+
+    // Monta a matriz de perspectiva
+    cv::Mat perspectiveMatrix = cv::Mat::eye(3, 3, CV_64F);
+
+    perspectiveMatrix.at&lt;double&gt;(0, 0) = h.at&lt;double&gt;(0);
+    perspectiveMatrix.at&lt;double&gt;(0, 1) = h.at&lt;double&gt;(1);
+    perspectiveMatrix.at&lt;double&gt;(0, 2) = h.at&lt;double&gt;(2);
+
+    perspectiveMatrix.at&lt;double&gt;(1, 0) = h.at&lt;double&gt;(3);
+    perspectiveMatrix.at&lt;double&gt;(1, 1) = h.at&lt;double&gt;(4);
+    perspectiveMatrix.at&lt;double&gt;(1, 2) = h.at&lt;double&gt;(5);
+
+    perspectiveMatrix.at&lt;double&gt;(2, 0) = h.at&lt;double&gt;(6);
+    perspectiveMatrix.at&lt;double&gt;(2, 1) = h.at&lt;double&gt;(7);
+
+    std::cout &lt;&lt; "\nMatriz de perspectiva:\n";
+    std::cout &lt;&lt; perspectiveMatrix &lt;&lt; std::endl;
+
+    // Corrige a perspectiva
+    cv::Mat correctedImage;
+
+    cv::warpPerspective(
+        image,
+        correctedImage,
+        perspectiveMatrix,
+        cv::Size(largura, altura)
+    );
+
+    // Mostra resultado
+    cv::imshow("Original Image", image);
+    cv::imshow("Corrected Image", correctedImage);
+
+    cv::waitKey(0);
+
+    return 0;
+}</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="cap13ex1.png" alt="Saída do Exercício 13.1">
+</div>
+<div class="title">Figure 19. Exercício 13.1</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_capítulo_14">Capítulo 14</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_exercício_1_11">Exercício 1</h3>
+<div class="paragraph">
+<p>Foi implementado o programa convolucao2.cpp, que aplica o filtro da média utilizando máscaras de diferentes tamanhos e compara os resultados, observando que máscaras maiores produzem maior suavização e desfoque da imagem.</p>
+</div>
+<div class="listingblock">
+<div class="title">Código convolucao2.cpp</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">#include &lt;iostream&gt;
+#include &lt;opencv2/opencv.hpp&gt;
+#include "camera.hpp"
+
+void printmask(cv::Mat &amp;m) {
+    for (int i = 0; i &lt; m.rows; i++) {
+        for (int j = 0; j &lt; m.cols; j++) {
+            std::cout &lt;&lt; m.at&lt;float&gt;(i, j) &lt;&lt; " ";
+        }
+        std::cout &lt;&lt; std::endl;
+    }
+}
+
+// Cria uma máscara do filtro da média de tamanho n x n
+cv::Mat criaMascaraMedia(int n) {
+    cv::Mat mask(n, n, CV_32F);
+
+    float valor = 1.0f / (n * n);
+
+    for (int i = 0; i &lt; n; i++) {
+        for (int j = 0; j &lt; n; j++) {
+            mask.at&lt;float&gt;(i, j) = valor;
+        }
+    }
+
+    return mask;
+}
+
+int main(int argc, char **argv) {
+
+    cv::VideoCapture cap;
+    int camera;
+
+    // Tamanhos das máscaras que serão comparados
+    int tamanho1 = 3;
+    int tamanho2 = 5;
+
+    // Permite informar os tamanhos pela linha de comando
+    if (argc == 3) {
+        tamanho1 = atoi(argv[1]);
+        tamanho2 = atoi(argv[2]);
+    }
+
+    // Os tamanhos precisam ser ímpares
+    if (tamanho1 % 2 == 0 || tamanho2 % 2 == 0) {
+        std::cerr &lt;&lt; "Os tamanhos das mascaras devem ser impares." &lt;&lt; std::endl;
+        return -1;
+    }
+
+    cv::Mat frame;
+    cv::Mat framegray;
+    cv::Mat frame32f;
+
+    cv::Mat mask1;
+    cv::Mat mask2;
+
+    cv::Mat result1;
+    cv::Mat result2;
+
+    cv::Mat filtered1;
+    cv::Mat filtered2;
+
+    char key;
+
+    // Cria as máscaras
+    mask1 = criaMascaraMedia(tamanho1);
+    mask2 = criaMascaraMedia(tamanho2);
+
+    std::cout &lt;&lt; "\nMascara " &lt;&lt; tamanho1 &lt;&lt; "x" &lt;&lt; tamanho1 &lt;&lt; ":\n";
+    printmask(mask1);
+
+    std::cout &lt;&lt; "\nMascara " &lt;&lt; tamanho2 &lt;&lt; "x" &lt;&lt; tamanho2 &lt;&lt; ":\n";
+    printmask(mask2);
+
+    // Inicializa a câmera
+    camera = cameraEnumerator();
+    cap.open(camera);
+
+    if (!cap.isOpened()) {
+        std::cerr &lt;&lt; "Erro ao abrir a camera." &lt;&lt; std::endl;
+        return -1;
+    }
+
+    cap.set(cv::CAP_PROP_FRAME_WIDTH, 640);
+    cap.set(cv::CAP_PROP_FRAME_HEIGHT, 480);
+
+    cv::namedWindow("original", cv::WINDOW_NORMAL);
+    cv::namedWindow("media " + std::to_string(tamanho1) + "x" +
+                    std::to_string(tamanho1), cv::WINDOW_NORMAL);
+    cv::namedWindow("media " + std::to_string(tamanho2) + "x" +
+                    std::to_string(tamanho2), cv::WINDOW_NORMAL);
+
+    for (;;) {
+
+        // Captura uma imagem
+        cap &gt;&gt; frame;
+
+        if (frame.empty())
+            break;
+
+        // Converte para tons de cinza
+        cv::cvtColor(frame, framegray, cv::COLOR_BGR2GRAY);
+
+        // Espelha a imagem
+        cv::flip(framegray, framegray, 1);
+
+        cv::imshow("original", framegray);
+
+        // Converte para float
+        framegray.convertTo(frame32f, CV_32F);
+
+        // Convolução com a primeira máscara
+        cv::filter2D(
+            frame32f,
+            filtered1,
+            frame32f.depth(),
+            mask1,
+            cv::Point(tamanho1 / 2, tamanho1 / 2),
+            cv::BORDER_REPLICATE
+        );
+
+        // Convolução com a segunda máscara
+        cv::filter2D(
+            frame32f,
+            filtered2,
+            frame32f.depth(),
+            mask2,
+            cv::Point(tamanho2 / 2, tamanho2 / 2),
+            cv::BORDER_REPLICATE
+        );
+
+        // Converte para 8 bits para exibição
+        filtered1.convertTo(result1, CV_8U);
+        filtered2.convertTo(result2, CV_8U);
+
+        // Mostra os resultados
+        cv::imshow(
+            "media " + std::to_string(tamanho1) + "x" +
+            std::to_string(tamanho1),
+            result1
+        );
+
+        cv::imshow(
+            "media " + std::to_string(tamanho2) + "x" +
+            std::to_string(tamanho2),
+            result2
+        );
+
+        // ESC encerra
+        key = (char)cv::waitKey(10);
+
+        if (key == 27)
+            break;
+    }
+
+    return 0;
+}</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="cap14ex1_convolucao2.png" alt="Saída do Exercício 14.1">
+</div>
+<div class="title">Figure 20. Exercício 14.1</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_exercício_2_7">Exercício 2</h3>
+<div class="paragraph">
+<p>Foi implementado o programa depthoffield.cpp, que utiliza o filtro Laplaciano para identificar as regiões mais nítidas de diferentes frames e combina os pixels correspondentes em uma única imagem, aumentando a quantidade de elementos em foco na cena.</p>
+</div>
+<div class="listingblock">
+<div class="title">Código depthoffield.cpp</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">#include &lt;iostream&gt;
+#include &lt;opencv2/opencv.hpp&gt;
+#include "camera.hpp"
+
+int main(int argc, char **argv) {
+
+    cv::VideoCapture cap;
+    int camera;
+
+    // Matriz usada para guardar o maior valor do Laplaciano
+    cv::Mat maxLaplacian;
+
+    // Imagens
+    cv::Mat frame;
+    cv::Mat frameGray;
+    cv::Mat frame32f;
+    cv::Mat laplacian;
+    cv::Mat output;
+
+    // Máscara Laplaciana 3x3
+    float lapMaskData[] = {
+         0, -1,  0,
+        -1,  4, -1,
+         0, -1,  0
+    };
+
+    cv::Mat lapMask(3, 3, CV_32F, lapMaskData);
+
+    // ---------------------------------------------------------
+    // Abre vídeo passado como argumento ou utiliza a câmera
+    // ---------------------------------------------------------
+
+    if (argc &gt; 1) {
+        cap.open(argv[1]);
+    } else {
+        camera = cameraEnumerator();
+        cap.open(camera);
+    }
+
+    if (!cap.isOpened()) {
+        std::cerr &lt;&lt; "Erro ao abrir a câmera/vídeo." &lt;&lt; std::endl;
+        return -1;
+    }
+
+    // Tamanho desejado para a captura
+    cap.set(cv::CAP_PROP_FRAME_WIDTH, 640);
+    cap.set(cv::CAP_PROP_FRAME_HEIGHT, 480);
+
+    cv::namedWindow("Original", cv::WINDOW_NORMAL);
+    cv::namedWindow("Resultado", cv::WINDOW_NORMAL);
+    cv::namedWindow("Laplaciano", cv::WINDOW_NORMAL);
+
+    bool primeiroFrame = true;
+
+    while (true) {
+
+        // ---------------------------------------------------------
+        // 1. Captura um frame
+        // ---------------------------------------------------------
+
+        cap &gt;&gt; frame;
+
+        if (frame.empty())
+            break;
+
+        // Se estiver usando câmera, espelha a imagem
+        if (argc == 1)
+            cv::flip(frame, frame, 1);
+
+        // ---------------------------------------------------------
+        // 2. Converte para tons de cinza
+        // ---------------------------------------------------------
+
+        cv::cvtColor(frame, frameGray, cv::COLOR_BGR2GRAY);
+
+        // ---------------------------------------------------------
+        // 3. Cria a matriz para guardar os máximos
+        // ---------------------------------------------------------
+
+        if (primeiroFrame) {
+            maxLaplacian = cv::Mat::zeros(
+                frameGray.size(),
+                CV_32F
+            );
+
+            output = frame.clone();
+
+            primeiroFrame = false;
+        }
+
+        // ---------------------------------------------------------
+        // 4. Aplica o filtro Laplaciano
+        // ---------------------------------------------------------
+
+        frameGray.convertTo(frame32f, CV_32F);
+
+        cv::filter2D(
+            frame32f,
+            laplacian,
+            CV_32F,
+            lapMask,
+            cv::Point(1, 1),
+            cv::BORDER_REPLICATE
+        );
+
+        // Utilizamos o valor absoluto como medida de nitidez
+        cv::Mat laplacianAbs = cv::abs(laplacian);
+
+        // ---------------------------------------------------------
+        // 5. Compara com os máximos anteriores
+        // ---------------------------------------------------------
+
+        for (int y = 0; y &lt; frame.rows; y++) {
+
+            for (int x = 0; x &lt; frame.cols; x++) {
+
+                float atual = laplacianAbs.at&lt;float&gt;(y, x);
+                float maximo = maxLaplacian.at&lt;float&gt;(y, x);
+
+                // Se o pixel atual estiver mais nítido,
+                // guarda o novo máximo e o pixel colorido
+                if (atual &gt; maximo) {
+
+                    maxLaplacian.at&lt;float&gt;(y, x) = atual;
+
+                    output.at&lt;cv::Vec3b&gt;(y, x) =
+                        frame.at&lt;cv::Vec3b&gt;(y, x);
+                }
+            }
+        }
+
+        // ---------------------------------------------------------
+        // 6. Exibe a imagem de saída
+        // ---------------------------------------------------------
+
+        cv::imshow("Original", frame);
+
+        // Normaliza o Laplaciano para visualização
+        cv::Mat laplacianDisplay;
+        cv::normalize(
+            laplacianAbs,
+            laplacianDisplay,
+            0,
+            255,
+            cv::NORM_MINMAX,
+            CV_8U
+        );
+
+        cv::imshow("Laplaciano", laplacianDisplay);
+        cv::imshow("Resultado", output);
+
+        char key = (char)cv::waitKey(10);
+
+        // ESC encerra
+        if (key == 27)
+            break;
+
+        // 'r' reinicia os máximos
+        if (key == 'r') {
+
+            maxLaplacian = cv::Mat::zeros(
+                frameGray.size(),
+                CV_32F
+            );
+
+            output = frame.clone();
+
+            std::cout &lt;&lt; "Maximos reiniciados." &lt;&lt; std::endl;
+        }
+    }
+
+    cap.release();
+    cv::destroyAllWindows();
+
+    return 0;
+}</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="cap14ex2_depthoffield.png" alt="Saída do Exercício 14.2">
+</div>
+<div class="title">Figure 21. Exercício 14.2</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="cap14ex2_vasos.png.png" alt="Saída do Exercício 14.2">
+</div>
+<div class="title">Figure 22. Exercício 14.2</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_capítulo_15">Capítulo 15</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_exercício_1_12">Exercício 1</h3>
+<div class="paragraph">
+<p>Tilt-shift em imagem: Foi implementado um programa para aplicar o efeito tilt-shift em uma imagem, utilizando desfoque gaussiano e uma máscara de transição para manter uma região central em foco. Foram adicionados controles para ajustar a altura, a intensidade do desfoque e a posição vertical da região em foco, permitindo gerar e salvar a imagem resultante.</p>
+</div>
+<div class="listingblock">
+<div class="title">Código tiltshift.cpp</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">#include &lt;iostream&gt;
+#include &lt;opencv2/opencv.hpp&gt;
+
+using namespace cv;
+using namespace std;
+
+// Imagem original e imagem resultante
+Mat original;
+Mat resultado;
+
+// Parâmetros dos trackbars
+int foco_altura = 30;       // altura da região em foco (%)
+int desfoque = 50;          // força do desfoque (%)
+int foco_posicao = 50;      // posição vertical do centro (%)
+
+int foco_altura_max = 100;
+int desfoque_max = 100;
+int foco_posicao_max = 100;
+
+// Função que aplica o efeito tilt-shift
+void aplicaTiltShift()
+{
+    if (original.empty())
+        return;
+
+    int largura = original.cols;
+    int altura = original.rows;
+
+    // ---------------------------------------------------------
+    // 1. Cria uma versão borrada da imagem
+    // ---------------------------------------------------------
+
+    // O tamanho do kernel depende do controle de desfoque
+    int ksize = 1 + 2 * (desfoque * 15 / desfoque_max);
+
+    if (ksize &lt; 1)
+        ksize = 1;
+
+    if (ksize % 2 == 0)
+        ksize++;
+
+    Mat borrada;
+
+    GaussianBlur(
+        original,
+        borrada,
+        Size(ksize, ksize),
+        0
+    );
+
+    // ---------------------------------------------------------
+    // 2. Define a posição e altura da região em foco
+    // ---------------------------------------------------------
+
+    double centro =
+        (double)foco_posicao / foco_posicao_max * altura;
+
+    double meia_altura =
+        ((double)foco_altura / foco_altura_max * altura) / 2.0;
+
+    // ---------------------------------------------------------
+    // 3. Cria máscara com transição suave
+    // ---------------------------------------------------------
+
+    Mat mascara(altura, largura, CV_32FC1);
+
+    for (int y = 0; y &lt; altura; y++)
+    {
+        double distancia = abs(y - centro);
+
+        double valor;
+
+        if (distancia &lt;= meia_altura)
+        {
+            // Região totalmente em foco
+            valor = 1.0;
+        }
+        else
+        {
+            // Distância a partir do limite da região em foco
+            double distanciaFora = distancia - meia_altura;
+
+            // Quanto maior o desfoque, mais rápida é a transição
+            double faixaTransicao =
+                altura * (0.05 + 0.45 * (desfoque / 100.0));
+
+            if (faixaTransicao &lt; 1.0)
+                faixaTransicao = 1.0;
+
+            valor = 1.0 - distanciaFora / faixaTransicao;
+
+            if (valor &lt; 0.0)
+                valor = 0.0;
+        }
+
+        for (int x = 0; x &lt; largura; x++)
+            mascara.at&lt;float&gt;(y, x) = (float)valor;
+    }
+
+    // ---------------------------------------------------------
+    // 4. Combina imagem original e imagem borrada
+    // ---------------------------------------------------------
+
+    resultado = Mat::zeros(original.size(), original.type());
+
+    for (int y = 0; y &lt; altura; y++)
+    {
+        for (int x = 0; x &lt; largura; x++)
+        {
+            float peso = mascara.at&lt;float&gt;(y, x);
+
+            Vec3b pixelOriginal = original.at&lt;Vec3b&gt;(y, x);
+            Vec3b pixelBorrado = borrada.at&lt;Vec3b&gt;(y, x);
+
+            Vec3b &amp;pixelResultado = resultado.at&lt;Vec3b&gt;(y, x);
+
+            for (int c = 0; c &lt; 3; c++)
+            {
+                pixelResultado[c] =
+                    saturate_cast&lt;uchar&gt;(
+                        peso * pixelOriginal[c] +
+                        (1.0f - peso) * pixelBorrado[c]
+                    );
+            }
+        }
+    }
+
+    // Mostra o resultado
+    imshow("Tilt-Shift", resultado);
+}
+
+// Callbacks dos trackbars
+void onFocoAltura(int, void*)
+{
+    aplicaTiltShift();
+}
+
+void onDesfoque(int, void*)
+{
+    aplicaTiltShift();
+}
+
+void onFocoPosicao(int, void*)
+{
+    aplicaTiltShift();
+}
+
+int main(int argc, char **argv)
+{
+    if (argc &lt; 2)
+    {
+        cout &lt;&lt; "Uso: " &lt;&lt; argv[0] &lt;&lt; " imagem" &lt;&lt; endl;
+        return 1;
+    }
+
+    // Carrega a imagem
+    original = imread(argv[1]);
+
+    if (original.empty())
+    {
+        cerr &lt;&lt; "Erro ao abrir a imagem: "
+             &lt;&lt; argv[1] &lt;&lt; endl;
+        return 1;
+    }
+
+    // Cria janela
+    namedWindow("Tilt-Shift", WINDOW_AUTOSIZE);
+
+    // Cria os três controles
+    createTrackbar(
+        "Altura do foco",
+        "Tilt-Shift",
+        &amp;foco_altura,
+        foco_altura_max,
+        onFocoAltura
+    );
+
+    createTrackbar(
+        "Forca do desfoque",
+        "Tilt-Shift",
+        &amp;desfoque,
+        desfoque_max,
+        onDesfoque
+    );
+
+    createTrackbar(
+        "Posicao do foco",
+        "Tilt-Shift",
+        &amp;foco_posicao,
+        foco_posicao_max,
+        onFocoPosicao
+    );
+
+    // Aplica o efeito inicialmente
+    aplicaTiltShift();
+
+    cout &lt;&lt; endl;
+    cout &lt;&lt; "Controles:" &lt;&lt; endl;
+    cout &lt;&lt; " - Altura do foco: tamanho da regiao nitida" &lt;&lt; endl;
+    cout &lt;&lt; " - Forca do desfoque: intensidade do borramento" &lt;&lt; endl;
+    cout &lt;&lt; " - Posicao do foco: deslocamento vertical da regiao" &lt;&lt; endl;
+    cout &lt;&lt; endl;
+    cout &lt;&lt; "Pressione 's' para salvar a imagem." &lt;&lt; endl;
+    cout &lt;&lt; "Pressione ESC para sair." &lt;&lt; endl;
+
+    while (true)
+    {
+        char tecla = waitKey(30);
+
+        // Salvar resultado
+        if (tecla == 's' || tecla == 'S')
+        {
+            imwrite("tiltshift_resultado.png", resultado);
+
+            cout &lt;&lt; "Imagem salva em: "
+                 &lt;&lt; "tiltshift_resultado.png"
+                 &lt;&lt; endl;
+        }
+
+        // Sair
+        if (tecla == 27)
+            break;
+    }
+
+    destroyAllWindows();
+
+    return 0;
+}</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="cap15ex1_blend1.png" alt="Saída do Exercício 15.1">
+</div>
+<div class="title">Figure 23. Exercício 15.1</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_exercício_2_8">Exercício 2</h3>
+<div class="listingblock">
+<div class="title">Código video.cpp</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">#include &lt;iostream&gt;
+#include &lt;opencv2/opencv.hpp&gt;
+
+using namespace cv;
+using namespace std;
+
+// Parâmetros do efeito
+int foco_altura = 30;
+int forca_desfoque = 50;
+int foco_posicao = 50;
+
+// Função que aplica o efeito tilt-shift em um quadro
+Mat aplicaTiltShift(const Mat &amp;original)
+{
+    int largura = original.cols;
+    int altura = original.rows;
+
+    // ---------------------------------------------------------
+    // Cria a imagem borrada
+    // ---------------------------------------------------------
+
+    int ksize = 1 + 2 * (forca_desfoque * 15 / 100);
+
+    if (ksize &lt; 1)
+        ksize = 1;
+
+    if (ksize % 2 == 0)
+        ksize++;
+
+    Mat borrada;
+
+    GaussianBlur(
+        original,
+        borrada,
+        Size(ksize, ksize),
+        0
+    );
+
+    // ---------------------------------------------------------
+    // Define a posição e a altura da região em foco
+    // ---------------------------------------------------------
+
+    double centro =
+        (double)foco_posicao / 100.0 * altura;
+
+    double meia_altura =
+        ((double)foco_altura / 100.0 * altura) / 2.0;
+
+    // ---------------------------------------------------------
+    // Cria a máscara vertical
+    // ---------------------------------------------------------
+
+    Mat mascara(altura, largura, CV_32FC1);
+
+    double faixa_transicao =
+        altura * (0.05 + 0.45 * (forca_desfoque / 100.0));
+
+    if (faixa_transicao &lt; 1.0)
+        faixa_transicao = 1.0;
+
+    for (int y = 0; y &lt; altura; y++)
+    {
+        double distancia = abs(y - centro);
+
+        double peso;
+
+        // Região completamente em foco
+        if (distancia &lt;= meia_altura)
+        {
+            peso = 1.0;
+        }
+        else
+        {
+            double distancia_fora =
+                distancia - meia_altura;
+
+            peso =
+                1.0 - distancia_fora / faixa_transicao;
+
+            if (peso &lt; 0.0)
+                peso = 0.0;
+        }
+
+        for (int x = 0; x &lt; largura; x++)
+        {
+            mascara.at&lt;float&gt;(y, x) =
+                (float)peso;
+        }
+    }
+
+    // ---------------------------------------------------------
+    // Combina imagem original e imagem borrada
+    // ---------------------------------------------------------
+
+    Mat resultado = Mat::zeros(
+        original.size(),
+        original.type()
+    );
+
+    for (int y = 0; y &lt; altura; y++)
+    {
+        for (int x = 0; x &lt; largura; x++)
+        {
+            float peso = mascara.at&lt;float&gt;(y, x);
+
+            Vec3b pixel_original =
+                original.at&lt;Vec3b&gt;(y, x);
+
+            Vec3b pixel_borrado =
+                borrada.at&lt;Vec3b&gt;(y, x);
+
+            Vec3b &amp;pixel_resultado =
+                resultado.at&lt;Vec3b&gt;(y, x);
+
+            for (int c = 0; c &lt; 3; c++)
+            {
+                pixel_resultado[c] =
+                    saturate_cast&lt;uchar&gt;(
+                        peso * pixel_original[c] +
+                        (1.0f - peso) *
+                        pixel_borrado[c]
+                    );
+            }
+        }
+    }
+
+    return resultado;
+}
+
+int main(int argc, char **argv)
+{
+    // ---------------------------------------------------------
+    // Verificação dos argumentos
+    // ---------------------------------------------------------
+
+    if (argc &lt; 3)
+    {
+        cout &lt;&lt; "Uso: " &lt;&lt; argv[0]
+             &lt;&lt; " video_entrada video_saida"
+             &lt;&lt; endl;
+
+        cout &lt;&lt; "Exemplo:"
+             &lt;&lt; endl;
+
+        cout &lt;&lt; "./tiltshiftvideo entrada.mp4 saida.mp4"
+             &lt;&lt; endl;
+
+        return 1;
+    }
+
+    // ---------------------------------------------------------
+    // Abre o vídeo
+    // ---------------------------------------------------------
+
+    VideoCapture video(argv[1]);
+
+    if (!video.isOpened())
+    {
+        cerr &lt;&lt; "Erro ao abrir o video: "
+             &lt;&lt; argv[1] &lt;&lt; endl;
+
+        return 1;
+    }
+
+    // Informações do vídeo original
+    int largura =
+        (int)video.get(CAP_PROP_FRAME_WIDTH);
+
+    int altura =
+        (int)video.get(CAP_PROP_FRAME_HEIGHT);
+
+    double fps =
+        video.get(CAP_PROP_FPS);
+
+    int total_quadros =
+        (int)video.get(CAP_PROP_FRAME_COUNT);
+
+    cout &lt;&lt; "Video original:" &lt;&lt; endl;
+    cout &lt;&lt; "Resolucao: "
+         &lt;&lt; largura &lt;&lt; "x" &lt;&lt; altura &lt;&lt; endl;
+
+    cout &lt;&lt; "FPS: "
+         &lt;&lt; fps &lt;&lt; endl;
+
+    cout &lt;&lt; "Quadros: "
+         &lt;&lt; total_quadros &lt;&lt; endl;
+
+    // ---------------------------------------------------------
+    // Stop motion
+    //
+    // Processamos somente um quadro a cada N quadros.
+    // Quanto maior o valor, mais evidente o efeito.
+    // ---------------------------------------------------------
+
+    int salto = 4;
+
+    // Reduzimos o FPS proporcionalmente ao descarte
+    double fps_saida = fps / salto;
+
+    // ---------------------------------------------------------
+    // Cria o arquivo de saída
+    // ---------------------------------------------------------
+
+    int codec = VideoWriter::fourcc(
+        'm', 'p', '4', 'v'
+    );
+
+    VideoWriter saida(
+        argv[2],
+        codec,
+        fps_saida,
+        Size(largura, altura)
+    );
+
+    if (!saida.isOpened())
+    {
+        cerr &lt;&lt; "Erro ao criar o video de saida."
+             &lt;&lt; endl;
+
+        return 1;
+    }
+
+    // ---------------------------------------------------------
+    // Janela para acompanhar o processamento
+    // ---------------------------------------------------------
+
+    namedWindow(
+        "Tilt-Shift Video",
+        WINDOW_AUTOSIZE
+    );
+
+    Mat frame;
+    Mat resultado;
+
+    int numero_quadro = 0;
+    int quadros_processados = 0;
+
+    // ---------------------------------------------------------
+    // Processamento
+    // ---------------------------------------------------------
+
+    while (true)
+    {
+        if (!video.read(frame))
+            break;
+
+        // -----------------------------------------------------
+        // Descarta quadros para criar stop motion
+        // -----------------------------------------------------
+
+        if (numero_quadro % salto != 0)
+        {
+            numero_quadro++;
+            continue;
+        }
+
+        // Aplica tilt-shift
+        resultado = aplicaTiltShift(frame);
+
+        // Escreve o quadro processado
+        saida.write(resultado);
+
+        // Mostra na tela
+        imshow(
+            "Tilt-Shift Video",
+            resultado
+        );
+
+        quadros_processados++;
+
+        numero_quadro++;
+
+        // ESC encerra o processamento
+        char tecla = (char)waitKey(1);
+
+        if (tecla == 27)
+            break;
+    }
+
+    // ---------------------------------------------------------
+    // Finalização
+    // ---------------------------------------------------------
+
+    video.release();
+    saida.release();
+
+    destroyAllWindows();
+
+    cout &lt;&lt; endl;
+    cout &lt;&lt; "Processamento concluido!" &lt;&lt; endl;
+
+    cout &lt;&lt; "Quadros originais: "
+         &lt;&lt; numero_quadro &lt;&lt; endl;
+
+    cout &lt;&lt; "Quadros processados: "
+         &lt;&lt; quadros_processados &lt;&lt; endl;
+
+    cout &lt;&lt; "Video salvo em: "
+         &lt;&lt; argv[2] &lt;&lt; endl;
+
+    return 0;
+}</code></pre>
+</div>
+</div>
+<video controls width="640">
+  <source src="tiltshift.mp4" type="video/mp4">
+</video>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-10-05 23:10:16 -0300
+</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/highlight.min.js"></script>
+<script>
+if (!hljs.initHighlighting.called) {
+  hljs.initHighlighting.called = true
+  ;[].slice.call(document.querySelectorAll('pre.highlight > code[data-lang]')).forEach(function (el) { hljs.highlightBlock(el) })
+}
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  messageStyle: "none",
+  tex2jax: {
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]],
+    ignoreClass: "nostem|nolatexmath"
+  },
+  asciimath2jax: {
+    delimiters: [["\\$", "\\$"]],
+    ignoreClass: "nostem|noasciimath"
+  },
+  TeX: { equationNumbers: { autoNumber: "none" } }
+})
+MathJax.Hub.Register.StartupHook("AsciiMath Jax Ready", function () {
+  MathJax.InputJax.AsciiMath.postfilterHooks.Add(function (data, node) {
+    if ((node = data.script.parentNode) && (node = node.parentNode) && node.classList.contains("stemblock")) {
+      data.math.root.display = "block"
+    }
+    return data
+  })
+})
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+</body>
+</html>
